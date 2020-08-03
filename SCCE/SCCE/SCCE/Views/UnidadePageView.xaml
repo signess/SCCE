@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SCCE.Views.UnidadePageView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:fontIcon="clr-namespace:SCCE.Fonts"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:st="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+    NavigationPage.HasNavigationBar="False"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid
+            HorizontalOptions="FillAndExpand"
+            RowDefinitions="1.2*, 2*"
+            VerticalOptions="FillAndExpand">
+            <Image
+                st:Transition.Name="UnidadeImage"
+                Aspect="AspectFill"
+                HorizontalOptions="FillAndExpand"
+                Source="{Binding UnidadeItem.Image}"
+                VerticalOptions="FillAndExpand" />
+            <BoxView
+                st:Transition.Name="UnidadeImage"
+                HorizontalOptions="FillAndExpand"
+                Opacity=".25"
+                VerticalOptions="FillAndExpand"
+                Color="Black" />
+            <Grid ColumnDefinitions="Auto,*" RowDefinitions="50">
+                <Button
+                    Margin="-20,0,0,0"
+                    BackgroundColor="Transparent"
+                    Clicked="GoBack"
+                    FontFamily="{StaticResource PostFontIcon}"
+                    FontSize="Large"
+                    HorizontalOptions="Start"
+                    Text="{x:Static fontIcon:Fonts.Back}"
+                    TextColor="White"
+                    VerticalOptions="Start" />
+                <Label
+                    Grid.Column="1"
+                    Margin="-30,0,0,0"
+                    FontFamily="ThemeFontBold"
+                    FontSize="20"
+                    Text="Voltar"
+                    TextColor="White"
+                    VerticalOptions="Center" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GoBack" />
+                </Grid.GestureRecognizers>
+            </Grid>
+            <pv:PancakeView
+                x:Name="DetailsView"
+                Grid.Row="1"
+                Margin="0,-50,0,0"
+                Padding="25,10,25,0"
+                BackgroundGradientEndColor="{Binding UnidadeItem.backgroundEndColor}"
+                BackgroundGradientStartColor="{Binding UnidadeItem.backgroundStartColor}"
+                CornerRadius="30,30,0,0"
+                VerticalOptions="FillAndExpand">
+                <ScrollView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <StackLayout HorizontalOptions="FillAndExpand" Spacing="15">
+                        <Grid HorizontalOptions="FillAndExpand">
+                            <StackLayout
+                                HorizontalOptions="FillAndExpand"
+                                Orientation="Horizontal"
+                                Spacing="5">
+                                <Label
+                                    FontFamily="{StaticResource PostFontIcon}"
+                                    FontSize="19"
+                                    HorizontalOptions="Start"
+                                    Text="{x:Static fontIcon:Fonts.LocationOutline}"
+                                    TextColor="White"
+                                    VerticalOptions="Center" />
+                                <Label
+                                    FontFamily="ThemeFontBold"
+                                    FontSize="22"
+                                    HorizontalOptions="Start"
+                                    Text="{Binding UnidadeItem.Nome, StringFormat='Unidade de {0:N}'}"
+                                    TextColor="White"
+                                    VerticalOptions="Center" />
+                            </StackLayout>
+                        </Grid>
+                        <BoxView
+                            BackgroundColor="#E4E4E4"
+                            HeightRequest="1"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Start" />
+                        <StackLayout
+                            HorizontalOptions="Center"
+                            Orientation="Horizontal"
+                            Spacing="20">
+                            <StackLayout BindableLayout.ItemsSource="{Binding UnidadeItem.ProcessosList}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <pv:PancakeView
+                                            Padding="10"
+                                            st:Transition.Name="BombaSub"
+                                            BackgroundColor="#E9E9E9"
+                                            CornerRadius="10"
+                                            HeightRequest="70"
+                                            HorizontalOptions="Center"
+                                            WidthRequest="350">
+                                            <pv:PancakeView.BackgroundGradientStops>
+                                                <pv:GradientStopCollection>
+                                                    <pv:GradientStop Offset="0" Color="#c3cdd6" />
+                                                    <pv:GradientStop Offset="0.5" Color="#dde7f0" />
+                                                    <pv:GradientStop Offset="1" Color="#f5faff" />
+                                                </pv:GradientStopCollection>
+                                            </pv:PancakeView.BackgroundGradientStops>
+                                            <pv:PancakeView.GestureRecognizers>
+                                                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="UnidadeTapped" />
+                                            </pv:PancakeView.GestureRecognizers>
+                                            <Grid ColumnDefinitions="200,*" RowDefinitions="Auto,*">
+                                                <Label
+                                                    FontFamily="ThemeFontBold"
+                                                    FontSize="20"
+                                                    Text="{Binding ProcessoName}"
+                                                    TextColor="#515151" />
+                                                <Label
+                                                    Grid.Column="1"
+                                                    FontFamily="ThemeFontMedium"
+                                                    FontSize="20"
+                                                    Text="{Binding Locins, StringFormat='Locins {0:N}'}"
+                                                    TextColor="#515151" />
+
+                                                <Label
+                                                    Grid.Row="1"
+                                                    Grid.ColumnSpan="1"
+                                                    FontFamily="ThemeFontRegular"
+                                                    FontSize="14"
+                                                    Text="{Binding Address}"
+                                                    TextColor="#707070" />
+                                            </Grid>
+                                        </pv:PancakeView>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </pv:PancakeView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

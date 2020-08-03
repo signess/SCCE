@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SCCE.Views.WelcomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <NavigationPage.TitleView>
+        <Label
+            FontFamily="ThemeFontBold"
+            FontSize="20"
+            HorizontalOptions="Fill"
+            Text="SCCE - Cadastro de Equipamentos"
+            TextColor="White"
+            VerticalOptions="CenterAndExpand" />
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+
+            <Label
+                Margin="0,0,0,30"
+                FontAttributes="Bold"
+                FontSize="30"
+                HorizontalTextAlignment="Center"
+                Text="SCCE!"
+                TextColor="Blue" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

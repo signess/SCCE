@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SCCE.Views.RegionalMapView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:fontIcon="clr-namespace:SCCE.Fonts"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    mc:Ignorable="d">
+    <NavigationPage.TitleView>
+        <Label
+            FontFamily="ThemeFontBold"
+            FontSize="22"
+            HorizontalOptions="Fill"
+            Text="Regionais"
+            TextColor="White"
+            VerticalOptions="CenterAndExpand" />
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid RowDefinitions="Auto,*">
+                <Image
+                    Margin="5,30,5,0"
+                    Aspect="AspectFit"
+                    Source="ms.png" />
+                <CollectionView
+                    x:Name="listRegional"
+                    Grid.Row="1"
+                    Margin="5,30,5,0"
+                    HeightRequest="105"
+                    HorizontalScrollBarVisibility="Never"
+                    ItemsSource="{Binding Regionais}">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout ItemSpacing="14" Orientation="Horizontal" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid RowDefinitions="20,*">
+                                <pancake:PancakeView
+                                    Grid.Row="1"
+                                    Padding="15,20,15,0"
+                                    BackgroundGradientAngle="0"
+                                    BackgroundGradientEndColor="{Binding backgroundEndColor}"
+                                    BackgroundGradientStartColor="{Binding backgroundStartColor}"
+                                    CornerRadius="12"
+                                    HeightRequest="{OnPlatform Android='95',
+                                                               iOS='90'}"
+                                    VerticalOptions="End"
+                                    WidthRequest="110">
+                                    <Label
+                                        FontFamily="ThemeFontBold"
+                                        FontSize="20"
+                                        HorizontalOptions="Center"
+                                        Text="{Binding Nome}"
+                                        TextColor="White" />
+                                </pancake:PancakeView>
+                                <pancake:PancakeView
+                                    Grid.RowSpan="2"
+                                    BackgroundColor="{Binding backgroundStartColor}"
+                                    CornerRadius="20"
+                                    HeightRequest="40"
+                                    HorizontalOptions="Center"
+                                    IsClippedToBounds="False"
+                                    TranslationY="5"
+                                    VerticalOptions="Start"
+                                    WidthRequest="40">
+                                    <Label
+                                        FontFamily="{StaticResource PostFontIcon}"
+                                        FontSize="24"
+                                        HorizontalOptions="Center"
+                                        Text="{x:Static fontIcon:Fonts.Drop}"
+                                        TextColor="White"
+                                        VerticalOptions="Center" />
+                                </pancake:PancakeView>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding Path=BindingContext.NavigatoToRegionalItem, Source={x:Reference listRegional}}"
+                                        CommandParameter="{Binding .}"
+                                        NumberOfTapsRequired="1" />
+                                </Grid.GestureRecognizers>
+                            </Grid>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+
+
+</ContentPage>
