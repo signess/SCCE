@@ -1,4 +1,7 @@
-﻿using System;
+﻿using FluentValidation;
+using SCCE.Models;
+using SCCE.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -9,7 +12,15 @@ namespace SCCE.ViewModels
     public class BaseViewModel : INotifyPropertyChanged
     {
         public INavigation Navigation;
+        public IValidator _dataValidator;
+        public IDataRepository _dataRepository;
+        protected IMessageService _messageService;
         bool isBusy = false;
+
+        public BaseViewModel()
+        {
+            _messageService = DependencyService.Get<IMessageService>();
+        }
         public bool IsBusy
         {
             get { return isBusy; }
@@ -22,6 +33,7 @@ namespace SCCE.ViewModels
             get { return title; }
             set { SetProperty(ref title, value); }
         }
+
 
         protected bool SetProperty<T>(ref T backingStore, T value,
             [CallerMemberName] string propertyName = "",
@@ -40,11 +52,7 @@ namespace SCCE.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
-            var changed = PropertyChanged;
-            if (changed == null)
-                return;
-
-            changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
     }

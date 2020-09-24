@@ -42,6 +42,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[9.2.2, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -52,21 +56,33 @@
               "target": "Package",
               "version": "[12.0.3, )"
             },
+            "PCLExt.FileStorage": {
+              "target": "Package",
+              "version": "[1.4.1.1, )"
+            },
+            "SQLiteNetExtensions": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
-              "version": "[1.5.3.2, )"
+              "version": "[1.6.0-pre1, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.7.0.968, )"
+              "version": "[4.8.0.1451, )"
             },
             "Xamarin.Forms.PancakeView": {
               "target": "Package",
-              "version": "[1.4.2, )"
+              "version": "[2.1.0.714, )"
             },
             "Xamarin.Plugin.SharedTransitions": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.3.0, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
@@ -83,7 +99,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

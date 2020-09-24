@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SCCE.Models
+﻿namespace SCCE.Models
 {
-    public static class BackgroundColors
+    public class BackgroundColors
     {
-        public const string DouradosStart = "#B24BFB";
-        public const string DouradosEnd = "#724791";
+        public string BackgroundStartColor { get; set; }
+        public string BackgroundEndColor { get; set; }
     }
 }

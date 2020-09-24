@@ -1,22 +1,27 @@
 {
   "version": 2,
-  "dgSpecHash": "hxHmCpQorwGwqoSDdtE7Etl+TCsk4bCfUSc9mCSv65j6oWva0faHBAwK0FUk1bkRxfDMSqMfVSr9um1sl3PSRg==",
+  "dgSpecHash": "OMOstkkK6aBdctXAE2/bnQ0PaRa2NkZMMznMBCeI233XCgcUI75cyelP3mM3v9f5ofrGwTx/4NnSKNCbwH9Yog==",
   "success": true,
   "projectFilePath": "C:\\Users\\suporte\\source\\repos\\SCCE\\SCCE\\SCCE.iOS\\SCCE.iOS.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\suporte\\.nuget\\packages\\fluentvalidation\\9.2.2\\fluentvalidation.9.2.2.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\suporte\\.nuget\\packages\\pclext.filestorage\\1.4.1.1\\pclext.filestorage.1.4.1.1.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\sqlite-net-pcl\\1.7.335\\sqlite-net-pcl.1.7.335.nupkg.sha512",
+    "C:\\Users\\suporte\\.nuget\\packages\\sqlitenetextensions\\2.1.0\\sqlitenetextensions.2.1.0.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.3\\sqlitepclraw.bundle_green.2.0.3.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\sqlitepclraw.core\\2.0.3\\sqlitepclraw.core.2.0.3.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\sqlitepclraw.provider.dynamic_cdecl\\2.0.3\\sqlitepclraw.provider.dynamic_cdecl.2.0.3.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\system.componentmodel\\4.3.0\\system.componentmodel.4.3.0.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\suporte\\.nuget\\packages\\system.net.http\\4.3.4\\system.net.http.4.3.4.nupkg.sha512",
+    "C:\\Users\\suporte\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
-    "C:\\Users\\suporte\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
-    "C:\\Users\\suporte\\.nuget\\packages\\xamarin.forms\\4.7.0.968\\xamarin.forms.4.7.0.968.nupkg.sha512",
-    "C:\\Users\\suporte\\.nuget\\packages\\xamarin.forms.pancakeview\\1.4.2\\xamarin.forms.pancakeview.1.4.2.nupkg.sha512",
-    "C:\\Users\\suporte\\.nuget\\packages\\xamarin.plugin.sharedtransitions\\2.2.0\\xamarin.plugin.sharedtransitions.2.2.0.nupkg.sha512"
+    "C:\\Users\\suporte\\.nuget\\packages\\xamarin.essentials\\1.6.0-pre1\\xamarin.essentials.1.6.0-pre1.nupkg.sha512",
+    "C:\\Users\\suporte\\.nuget\\packages\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512",
+    "C:\\Users\\suporte\\.nuget\\packages\\xamarin.forms.pancakeview\\2.1.0.714\\xamarin.forms.pancakeview.2.1.0.714.nupkg.sha512",
+    "C:\\Users\\suporte\\.nuget\\packages\\xamarin.plugin.sharedtransitions\\2.3.0\\xamarin.plugin.sharedtransitions.2.3.0.nupkg.sha512"
   ],
   "logs": []
 }

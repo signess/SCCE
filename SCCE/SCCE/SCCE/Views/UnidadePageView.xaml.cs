@@ -15,7 +15,7 @@ namespace SCCE.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UnidadePageView : ContentPage
     {
-        public UnidadePageView(UnidadeItem unidade)
+        public UnidadePageView(RegionalModel unidade)
         {
             InitializeComponent();
             this.UnidadeItem = unidade;
@@ -29,7 +29,7 @@ namespace SCCE.Views
             DetailsView.TranslateTo(0, 0, 500, Easing.SinInOut);
         }
 
-        public UnidadeItem UnidadeItem { get; set; }
+        public RegionalModel UnidadeItem { get; set; }
 
         private void GoBack(object sender, EventArgs e)
         {
@@ -40,7 +40,7 @@ namespace SCCE.Views
         {
             var processo = (sender as View).BindingContext as ProcessosItem;
             SharedTransitionNavigationPage.SetTransitionSelectedGroup(this, processo.Id);
-            Navigation.PushAsync(new FinalView(processo, UnidadeItem.backgroundStartColor, UnidadeItem.backgroundEndColor));
+            Navigation.PushAsync(new FinalView(processo, UnidadeItem.BackgroundStartColor, UnidadeItem.BackgroundEndColor));
         }
     }
 }
