@@ -1,10 +1,9 @@
 ﻿using Newtonsoft.Json;
-using Plugin.SharedTransitions;
 using SCCE.Data;
 using SCCE.Models;
 using SCCE.Services;
 using SCCE.Views;
-using System;
+using SCCE.Views.Tutorial;
 using System.Collections.Generic;
 using Xamarin.Forms;
 
@@ -37,11 +36,11 @@ namespace SCCE
             }
             if (DataList.Count > 0)
             {
-                MainPage = new SharedTransitionNavigationPage(new WelcomePage(true));
+                MainPage = new WelcomePage();
             }
             else
             {
-                MainPage = new SharedTransitionNavigationPage(new WelcomePage(false));
+                MainPage = new TutorialPage();
             }
         }
 

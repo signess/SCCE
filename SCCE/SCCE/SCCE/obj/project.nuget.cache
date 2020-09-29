@@ -1,15 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "ID75ir0dzFXi43HGQ/NI7kqRej2i/WVfcR9/2agsFdSxmmr4dCTDDrNe5r+JiWvMj1r1Cz9P8usLE7Krx+Xdsg==",
+  "dgSpecHash": "xhp1ZDHkEZQr1XtZSzPOgtkbPTh6aBlgh1UV2In/QaGnCH0QpNBUXJdDo2/qOV2G37jZG6b6dNWaohBiA58Kag==",
   "success": true,
-  "projectFilePath": "C:\\Users\\suporte\\source\\repos\\SCCE\\SCCE\\SCCE\\SCCE.csproj",
+  "projectFilePath": "C:\\Users\\suporte\\Source\\Repos\\signess\\SCCE\\SCCE\\SCCE\\SCCE\\SCCE.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\suporte\\.nuget\\packages\\carouselview.formsplugin\\5.2.0\\carouselview.formsplugin.5.2.0.nupkg.sha512",
+    "C:\\Users\\suporte\\.nuget\\packages\\com.airbnb.xamarin.forms.lottie\\4.0.2\\com.airbnb.xamarin.forms.lottie.4.0.2.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\fluentvalidation\\9.2.2\\fluentvalidation.9.2.2.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.1\\microsoft.netcore.platforms.1.1.1.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\pclext.filestorage\\1.4.1.1\\pclext.filestorage.1.4.1.1.nupkg.sha512",
+    "C:\\Users\\suporte\\.nuget\\packages\\rg.plugins.popup\\2.0.0.5\\rg.plugins.popup.2.0.0.5.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
@@ -68,10 +71,10 @@
     "C:\\Users\\suporte\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
+    "C:\\Users\\suporte\\.nuget\\packages\\xamanimation\\1.3.0\\xamanimation.1.3.0.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\xamarin.essentials\\1.6.0-pre1\\xamarin.essentials.1.6.0-pre1.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512",
-    "C:\\Users\\suporte\\.nuget\\packages\\xamarin.forms.pancakeview\\2.1.0.714\\xamarin.forms.pancakeview.2.1.0.714.nupkg.sha512",
-    "C:\\Users\\suporte\\.nuget\\packages\\xamarin.plugin.sharedtransitions\\2.3.0\\xamarin.plugin.sharedtransitions.2.3.0.nupkg.sha512"
+    "C:\\Users\\suporte\\.nuget\\packages\\xamarin.forms.pancakeview\\2.1.0.714\\xamarin.forms.pancakeview.2.1.0.714.nupkg.sha512"
   ],
   "logs": []
 }

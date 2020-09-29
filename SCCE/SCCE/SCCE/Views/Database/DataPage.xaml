@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+    x:Class="SCCE.Views.Database.DataPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+            DurationIn="500"
+            EasingIn="BounceOut"
+            PositionIn="Bottom"
+            PositionOut="Center"
+            ScaleIn="1"
+            ScaleOut="0.7" />
+    </pages:PopupPage.Animation>
+    <ScrollView HorizontalOptions="Center" VerticalOptions="Center">
+        <AbsoluteLayout>
+            <Frame
+                x:Name="FrameContainer"
+                Margin="15"
+                BackgroundColor="White"
+                HorizontalOptions="Center">
+                <StackLayout
+                    Padding="10,5"
+                    IsClippedToBounds="True"
+                    Spacing="3">
+                    <forms:AnimationView
+                        x:Name="LottieAnimation"
+                        Margin="10"
+                        Animation="download.json"
+                        AutoPlay="true"
+                        HeightRequest="150"
+                        HorizontalOptions="Center"
+                        RepeatCount="100"
+                        RepeatMode="Restart"
+                        Scale="1"
+                        Speed="1"
+                        WidthRequest="150" />
+                </StackLayout>
+            </Frame>
+        </AbsoluteLayout>
+    </ScrollView>
+</pages:PopupPage>

@@ -6,9 +6,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    xmlns:st="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
     x:Name="LocalidadesView"
-    st:SharedTransitionNavigationPage.TransitionSelectedGroup="{Binding SelectedLocalidadeId}"
     mc:Ignorable="d">
     <NavigationPage.TitleView>
         <Label
@@ -55,8 +53,6 @@
                                             NumberOfTapsRequired="1" />
                                     </Grid.GestureRecognizers>
                                     <Image
-                                        st:Transition.Group="{Binding Id}"
-                                        st:Transition.Name="UnidadeImage"
                                         Aspect="AspectFill"
                                         HeightRequest="80"
                                         Source="{Binding Image}" />

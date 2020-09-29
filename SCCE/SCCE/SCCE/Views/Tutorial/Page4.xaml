@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="SCCE.Views.Tutorial.Page4"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation">
+    <ContentView.Resources>
+        <ResourceDictionary>
+
+            <xamanimation:ColorAnimation
+                x:Key="BackgroundColorAnimation"
+                Target="{x:Reference MainPanel}"
+                ToColor="{StaticResource Page4}"
+                Duration="250" />
+
+            <xamanimation:StoryBoard x:Key="InfoPanelAnimation" Target="{x:Reference InfoPanel}">
+                <xamanimation:FadeToAnimation Opacity="1" Duration="50" />
+                <xamanimation:TranslateToAnimation
+                    Easing="CubicIn"
+                    TranslateY="0"
+                    Duration="100" />
+            </xamanimation:StoryBoard>
+
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <Grid x:Name="MainPanel" BackgroundColor="{StaticResource Page3}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2.5*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <forms:AnimationView
+            x:Name="LottieAnimation"
+            Grid.Row="0"
+            Animation="database.json"
+            AutoPlay="true"
+            HorizontalOptions="FillAndExpand"
+            RepeatCount="100"
+            RepeatMode="Infinite"
+            Scale="2"
+            Speed="1"
+            VerticalOptions="FillAndExpand" />
+        <StackLayout
+            x:Name="InfoPanel"
+            Grid.Row="1"
+            Padding="0,-24,0,0"
+            Opacity="0"
+            TranslationY="250"
+            VerticalOptions="Start">
+            <Label Style="{StaticResource TutorialTitle}" Text="Sua consulta é offline" />
+            <Label Style="{StaticResource TutorialInfo}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Depois de adquiridos os dados pela rede você " />
+                        <Span Text="não precisa mais se preocupar com conexão. " />
+                        <Span Text="Mas lembre-se de procurar atualizações de vez em quando." />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </Grid>
+</ContentView>

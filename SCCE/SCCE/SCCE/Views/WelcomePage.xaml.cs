@@ -1,23 +1,27 @@
-﻿using SCCE.ViewModels;
-using Xamarin.Forms;
+﻿using Rg.Plugins.Popup.Services;
+using SCCE.Views.Database;
+using SCCE.Views.Tutorial;
+using Xamanimation;
 using Xamarin.Forms.Xaml;
 
 namespace SCCE.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class WelcomePage : ContentPage
+    public partial class WelcomePage : IAnimatedView
     {
-        readonly bool DB;
-        public WelcomePage(bool dbFound)
+        public WelcomePage()
         {
             InitializeComponent();
-            DB = dbFound;
+            var dataPage = new DataPage();
+            PopupNavigation.Instance.PushAsync(dataPage);
         }
 
-        protected override void OnAppearing()
+        public void StartAnimation()
         {
-            base.OnAppearing();
-            BindingContext = new WelcomeViewModel(Navigation, DB);
+            if (Resources["InfoPanelAnimation"] is StoryBoard animation)
+            {
+                animation.Begin();
+            }
         }
     }
 }

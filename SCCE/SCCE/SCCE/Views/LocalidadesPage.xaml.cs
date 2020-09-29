@@ -1,5 +1,4 @@
-﻿using Plugin.SharedTransitions;
-using SCCE.Models;
+﻿using SCCE.Models;
 using SCCE.ViewModels;
 using System;
 
@@ -21,14 +20,6 @@ namespace SCCE.Views
         protected override void OnAppearing()
         {
             BindingContext = new LocalidadesViewModel(Navigation, regional);
-        }
-        
-        private void ProcessoSelected(object sender, EventArgs e)
-        {
-            /*
-            var processo = (sender as View).BindingContext as ProcessosModel;
-            SharedTransitionNavigationPage.SetTransitionSelectedGroup(this, processo.Id);
-            //await Navigation.PushAsync(new UnidadePageView(processo));*/
         }
     }
 }

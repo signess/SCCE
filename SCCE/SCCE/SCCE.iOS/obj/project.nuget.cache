@@ -1,12 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "OMOstkkK6aBdctXAE2/bnQ0PaRa2NkZMMznMBCeI233XCgcUI75cyelP3mM3v9f5ofrGwTx/4NnSKNCbwH9Yog==",
+  "dgSpecHash": "WJMRh81cvwjc38TtUkugWEMFLLvzdIipweqskHyO8w/t4Dr6nbUBKWnOHxQbZqymRa75VBTqpZT/NBAapbJ2mg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\suporte\\source\\repos\\SCCE\\SCCE\\SCCE.iOS\\SCCE.iOS.csproj",
+  "projectFilePath": "C:\\Users\\suporte\\Source\\Repos\\signess\\SCCE\\SCCE\\SCCE\\SCCE.iOS\\SCCE.iOS.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\suporte\\.nuget\\packages\\carouselview.formsplugin\\5.2.0\\carouselview.formsplugin.5.2.0.nupkg.sha512",
+    "C:\\Users\\suporte\\.nuget\\packages\\com.airbnb.ios.lottie\\2.5.12\\com.airbnb.ios.lottie.2.5.12.nupkg.sha512",
+    "C:\\Users\\suporte\\.nuget\\packages\\com.airbnb.xamarin.forms.lottie\\4.0.2\\com.airbnb.xamarin.forms.lottie.4.0.2.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\fluentvalidation\\9.2.2\\fluentvalidation.9.2.2.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\pclext.filestorage\\1.4.1.1\\pclext.filestorage.1.4.1.1.nupkg.sha512",
+    "C:\\Users\\suporte\\.nuget\\packages\\rg.plugins.popup\\2.0.0.5\\rg.plugins.popup.2.0.0.5.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\sqlite-net-pcl\\1.7.335\\sqlite-net-pcl.1.7.335.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\sqlitenetextensions\\2.1.0\\sqlitenetextensions.2.1.0.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.3\\sqlitepclraw.bundle_green.2.0.3.nupkg.sha512",
@@ -18,10 +22,10 @@
     "C:\\Users\\suporte\\.nuget\\packages\\system.net.http\\4.3.4\\system.net.http.4.3.4.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\suporte\\.nuget\\packages\\xamanimation\\1.3.0\\xamanimation.1.3.0.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\xamarin.essentials\\1.6.0-pre1\\xamarin.essentials.1.6.0-pre1.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512",
-    "C:\\Users\\suporte\\.nuget\\packages\\xamarin.forms.pancakeview\\2.1.0.714\\xamarin.forms.pancakeview.2.1.0.714.nupkg.sha512",
-    "C:\\Users\\suporte\\.nuget\\packages\\xamarin.plugin.sharedtransitions\\2.3.0\\xamarin.plugin.sharedtransitions.2.3.0.nupkg.sha512"
+    "C:\\Users\\suporte\\.nuget\\packages\\xamarin.forms.pancakeview\\2.1.0.714\\xamarin.forms.pancakeview.2.1.0.714.nupkg.sha512"
   ],
   "logs": []
 }

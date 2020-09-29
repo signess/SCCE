@@ -17,7 +17,7 @@
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
     <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
@@ -54,6 +54,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="CarouselView.FormsPlugin">
+      <Version>5.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Com.Airbnb.Android.Lottie">
+      <Version>3.4.3</Version>
+    </PackageReference>
+    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie">
+      <Version>4.0.2</Version>
+    </PackageReference>
     <PackageReference Include="FluentValidation">
       <Version>9.2.2</Version>
     </PackageReference>
@@ -62,6 +71,9 @@
     </PackageReference>
     <PackageReference Include="PCLExt.FileStorage">
       <Version>1.4.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Rg.Plugins.Popup">
+      <Version>2.0.0.5</Version>
     </PackageReference>
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.7.335</Version>
@@ -72,13 +84,16 @@
     <PackageReference Include="System.Net.Http">
       <Version>4.3.4</Version>
     </PackageReference>
+    <PackageReference Include="Xamanimation">
+      <Version>1.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.AndroidX.AppCompat">
+      <Version>1.2.0.4</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.0-pre1" />
     <PackageReference Include="Xamarin.Forms.PancakeView">
       <Version>2.1.0.714</Version>
-    </PackageReference>
-    <PackageReference Include="Xamarin.Plugin.SharedTransitions">
-      <Version>2.3.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +104,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\fontello.ttf" />
+    <AndroidAsset Include="Assets\internetconnection.json" />
+    <AndroidAsset Include="Assets\database.json" />
+    <AndroidAsset Include="Assets\bubbles.json" />
+    <AndroidAsset Include="Assets\downloadbutton.json" />
+    <AndroidAsset Include="Assets\location.json" />
+    <AndroidAsset Include="Assets\download.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

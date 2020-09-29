@@ -5,9 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:fontIcon="clr-namespace:SCCE.Fonts"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    xmlns:st="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
     x:Name="ProcessosView"
     NavigationPage.HasNavigationBar="False"
     mc:Ignorable="d">
@@ -17,13 +17,11 @@
             RowDefinitions="1.2*, 2*"
             VerticalOptions="FillAndExpand">
             <Image
-                st:Transition.Name="UnidadeImage"
                 Aspect="AspectFill"
                 HorizontalOptions="FillAndExpand"
-                Source="{Binding BindingContext.Image, Source={x:Reference Name=ProcessosView}}"
+                Source="{Binding Localidade.Image}"
                 VerticalOptions="FillAndExpand" />
             <BoxView
-                st:Transition.Name="UnidadeImage"
                 HorizontalOptions="FillAndExpand"
                 Opacity=".25"
                 VerticalOptions="FillAndExpand"
@@ -82,7 +80,7 @@
                                     FontFamily="ThemeFontBold"
                                     FontSize="22"
                                     HorizontalOptions="Start"
-                                    Text="{Binding BindingContext.Nome, StringFormat='UNIDADE {0:N}', Source={x:Reference Name=ProcessosView}}"
+                                    Text="{Binding Localidade.Nome, StringFormat='UNIDADE {0:N}'}"
                                     TextColor="White"
                                     VerticalOptions="Center" />
                             </StackLayout>
@@ -101,7 +99,6 @@
                                     <DataTemplate>
                                         <pv:PancakeView
                                             Padding="10"
-                                            st:Transition.Name="BombaSub"
                                             BackgroundColor="#E9E9E9"
                                             CornerRadius="10"
                                             HeightRequest="70"

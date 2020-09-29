@@ -9,21 +9,42 @@
     ".NETStandard,Version=v2.0/": {
       "SCCE/1.0.0": {
         "dependencies": {
+          "CarouselView.FormsPlugin": "5.2.0",
+          "Com.Airbnb.Xamarin.Forms.Lottie": "4.0.2",
           "FluentValidation": "9.2.2",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.3",
           "PCLExt.FileStorage": "1.4.1.1",
+          "Rg.Plugins.Popup": "2.0.0.5",
           "SQLiteNetExtensions": "2.1.0",
           "System.Net.Http": "4.3.4",
+          "Xamanimation": "1.3.0",
           "Xamarin.Essentials": "1.6.0-pre1",
           "Xamarin.Forms": "4.8.0.1451",
           "Xamarin.Forms.PancakeView": "2.1.0.714",
-          "Xamarin.Plugin.SharedTransitions": "2.3.0",
-          "sqlite-net-pcl": "1.7.335",
-          "Mono.Android": "0.0.0.0"
+          "sqlite-net-pcl": "1.7.335"
         },
         "runtime": {
           "SCCE.dll": {}
+        }
+      },
+      "CarouselView.FormsPlugin/5.2.0": {
+        "runtime": {
+          "lib/netstandard2.0/CarouselView.FormsPlugin.Abstractions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Com.Airbnb.Xamarin.Forms.Lottie/4.0.2": {
+        "dependencies": {
+          "Xamarin.Forms": "4.8.0.1451"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Lottie.Forms.dll": {
+            "assemblyVersion": "4.0.2.0",
+            "fileVersion": "4.0.2.0"
+          }
         }
       },
       "FluentValidation/9.2.2": {
@@ -58,6 +79,17 @@
           "lib/netstandard2.0/PCLExt.FileStorage.dll": {
             "assemblyVersion": "1.4.1.1",
             "fileVersion": "1.4.1.1"
+          }
+        }
+      },
+      "Rg.Plugins.Popup/2.0.0.5": {
+        "dependencies": {
+          "Xamarin.Forms": "4.8.0.1451"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Rg.Plugins.Popup.dll": {
+            "assemblyVersion": "2.0.0.5",
+            "fileVersion": "2.0.0.5"
           }
         }
       },
@@ -606,6 +638,17 @@
           "System.Runtime": "4.3.0"
         }
       },
+      "Xamanimation/1.3.0": {
+        "dependencies": {
+          "Xamarin.Forms": "4.8.0.1451"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamanimation.dll": {
+            "assemblyVersion": "1.3.0.0",
+            "fileVersion": "1.3.0.0"
+          }
+        }
+      },
       "Xamarin.Essentials/1.6.0-pre1": {
         "dependencies": {
           "System.Numerics.Vectors": "4.5.0"
@@ -644,25 +687,6 @@
             "fileVersion": "2.0.1.0"
           }
         }
-      },
-      "Xamarin.Plugin.SharedTransitions/2.3.0": {
-        "dependencies": {
-          "Xamarin.Forms": "4.8.0.1451"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Plugin.SharedTransitions.dll": {
-            "assemblyVersion": "2.3.0.0",
-            "fileVersion": "2.3.0.0"
-          }
-        }
-      },
-      "Mono.Android/0.0.0.0": {
-        "runtime": {
-          "Mono.Android.dll": {
-            "assemblyVersion": "0.0.0.0",
-            "fileVersion": "0.0.0.0"
-          }
-        }
       }
     }
   },
@@ -671,6 +695,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "CarouselView.FormsPlugin/5.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-h849lqz0wvmpyiXqCrN7EW+cCGqK5chcefCfS55CkoGMMQx238QWNknUTOl/CvIdZ4bgs0Oztb7kamYXDlQ5mQ==",
+      "path": "carouselview.formsplugin/5.2.0",
+      "hashPath": "carouselview.formsplugin.5.2.0.nupkg.sha512"
+    },
+    "Com.Airbnb.Xamarin.Forms.Lottie/4.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xBdEKZ5woRU1XGPbs+dGjIkKTgnGBWXHNM79WwbmODy635lLUDJ1DdaTVOV5SM5s8L67kdCsuwBw+mQ0XKgrmg==",
+      "path": "com.airbnb.xamarin.forms.lottie/4.0.2",
+      "hashPath": "com.airbnb.xamarin.forms.lottie.4.0.2.nupkg.sha512"
     },
     "FluentValidation/9.2.2": {
       "type": "package",
@@ -713,6 +751,13 @@
       "sha512": "sha512-1obyFostdhYsRVTld0Lo/h5c9ZgXPWfe/BRkd2TKn6M33bE+LLJVdLfPcfUxrjUvYElwor4hh8zJ2DkH/l0KYA==",
       "path": "pclext.filestorage/1.4.1.1",
       "hashPath": "pclext.filestorage.1.4.1.1.nupkg.sha512"
+    },
+    "Rg.Plugins.Popup/2.0.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uUfLWqKU6B7Uf5LVgZCNNK2R5y7iR7vxio6hoixZcr4IeCyx6zSDYZwAkwCy6cDeV11RDbDSHF5gTV0EUTlnow==",
+      "path": "rg.plugins.popup/2.0.0.5",
+      "hashPath": "rg.plugins.popup.2.0.0.5.nupkg.sha512"
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
       "type": "package",
@@ -1120,6 +1165,13 @@
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
     },
+    "Xamanimation/1.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CXYLcQulqAL9qxRMecm5P5YXbOWiBGK0mgtV2buyHehLjbj6Hf+EdHs8cqVztrD47/zAiTAz2yDCURRXC8d33Q==",
+      "path": "xamanimation/1.3.0",
+      "hashPath": "xamanimation.1.3.0.nupkg.sha512"
+    },
     "Xamarin.Essentials/1.6.0-pre1": {
       "type": "package",
       "serviceable": true,
@@ -1140,18 +1192,6 @@
       "sha512": "sha512-a1TKL5EqeSGJaik+Dx2Dq0f3q/sED40UTiFtDmkZ7fVYE3CQdcPppaA4tf2bsZa4wnzes1J+myvtoXjdwmSmvQ==",
       "path": "xamarin.forms.pancakeview/2.1.0.714",
       "hashPath": "xamarin.forms.pancakeview.2.1.0.714.nupkg.sha512"
-    },
-    "Xamarin.Plugin.SharedTransitions/2.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-YSZe+xvNZk8asCDHwFhoIt5fkqYcre99aI9qIMzQpVJ22zRz9y0RgVHhV7RVSQeeIRYx5sjkr28VFvDvZqpY9w==",
-      "path": "xamarin.plugin.sharedtransitions/2.3.0",
-      "hashPath": "xamarin.plugin.sharedtransitions.2.3.0.nupkg.sha512"
-    },
-    "Mono.Android/0.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

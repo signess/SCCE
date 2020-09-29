@@ -37,12 +37,7 @@ namespace SCCE.ViewModels
 
         private async Task ExecuteNavigateToRegionalItemCommand(RegionalModel param)
         {
-            if (!IsBusy)
-            {
-                IsBusy = true;
-                await Navigation.PushAsync(new LocalidadesPage(param));
-                IsBusy = false;
-            }
+            await Navigation.PushAsync(new LocalidadesPage(param));
         }
     }
 }

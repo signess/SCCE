@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\suporte\\source\\repos\\SCCE\\SCCE\\SCCE\\SCCE.csproj": {}
+    "C:\\Users\\suporte\\Source\\Repos\\signess\\SCCE\\SCCE\\SCCE\\SCCE\\SCCE.csproj": {}
   },
   "projects": {
-    "C:\\Users\\suporte\\source\\repos\\SCCE\\SCCE\\SCCE\\SCCE.csproj": {
+    "C:\\Users\\suporte\\Source\\Repos\\signess\\SCCE\\SCCE\\SCCE\\SCCE\\SCCE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\suporte\\source\\repos\\SCCE\\SCCE\\SCCE\\SCCE.csproj",
+        "projectUniqueName": "C:\\Users\\suporte\\Source\\Repos\\signess\\SCCE\\SCCE\\SCCE\\SCCE\\SCCE.csproj",
         "projectName": "SCCE",
-        "projectPath": "C:\\Users\\suporte\\source\\repos\\SCCE\\SCCE\\SCCE\\SCCE.csproj",
+        "projectPath": "C:\\Users\\suporte\\Source\\Repos\\signess\\SCCE\\SCCE\\SCCE\\SCCE\\SCCE.csproj",
         "packagesPath": "C:\\Users\\suporte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\suporte\\source\\repos\\SCCE\\SCCE\\SCCE\\obj\\",
+        "outputPath": "C:\\Users\\suporte\\Source\\Repos\\signess\\SCCE\\SCCE\\SCCE\\SCCE\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -42,6 +42,14 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "CarouselView.FormsPlugin": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Com.Airbnb.Xamarin.Forms.Lottie": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
             "FluentValidation": {
               "target": "Package",
               "version": "[9.2.2, )"
@@ -60,6 +68,10 @@
               "target": "Package",
               "version": "[1.4.1.1, )"
             },
+            "Rg.Plugins.Popup": {
+              "target": "Package",
+              "version": "[2.0.0.5, )"
+            },
             "SQLiteNetExtensions": {
               "target": "Package",
               "version": "[2.1.0, )"
@@ -67,6 +79,10 @@
             "System.Net.Http": {
               "target": "Package",
               "version": "[4.3.4, )"
+            },
+            "Xamanimation": {
+              "target": "Package",
+              "version": "[1.3.0, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
@@ -79,10 +95,6 @@
             "Xamarin.Forms.PancakeView": {
               "target": "Package",
               "version": "[2.1.0.714, )"
-            },
-            "Xamarin.Plugin.SharedTransitions": {
-              "target": "Package",
-              "version": "[2.3.0, )"
             },
             "sqlite-net-pcl": {
               "target": "Package",
@@ -99,7 +111,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

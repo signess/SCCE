@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="SCCE.Views.Tutorial.Page2"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation">
+    <ContentView.Resources>
+        <ResourceDictionary>
+
+            <xamanimation:StoryBoard x:Key="InfoPanelAnimation" Target="{x:Reference InfoPanel}">
+                <xamanimation:FadeToAnimation Opacity="1" Duration="50" />
+                <xamanimation:TranslateToAnimation
+                    Easing="CubicIn"
+                    TranslateY="0"
+                    Duration="100" />
+            </xamanimation:StoryBoard>
+
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <Grid
+        x:Name="MainPanel"
+        BackgroundColor="{StaticResource Page2}"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <forms:AnimationView
+            x:Name="LottieAnimation"
+            Animation="bubbles.json"
+            AutoPlay="true"
+            HorizontalOptions="FillAndExpand"
+            RepeatCount="100"
+            RepeatMode="Restart"
+            Scale="1"
+            Speed="1"
+            VerticalOptions="FillAndExpand" />
+        <StackLayout
+            x:Name="InfoPanel"
+            Grid.Row="0"
+            Padding="0,-24,0,0"
+            Opacity="0"
+            TranslationY="250"
+            VerticalOptions="CenterAndExpand">
+            <Label Style="{StaticResource TutorialTitle}" Text="Saudações usuario!" />
+            <Label Style="{StaticResource TutorialInfo}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Obrigado por usar o SCCE!" />
+                        <Span Text=" Mas antes de iniciar precisamos ajustar algumas coisas " />
+                        <Span Text="pra que ele funcione perfeitamente no seu dispositivo." />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </Grid>
+</ContentView>

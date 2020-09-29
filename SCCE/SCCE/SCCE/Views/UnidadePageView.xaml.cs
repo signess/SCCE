@@ -1,5 +1,4 @@
-﻿using Plugin.SharedTransitions;
-using SCCE.Models;
+﻿using SCCE.Models;
 using SCCE.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -36,11 +35,5 @@ namespace SCCE.Views
             Navigation.PopAsync();
         }
 
-        private void UnidadeTapped(object sender, EventArgs e)
-        {
-            var processo = (sender as View).BindingContext as ProcessosItem;
-            SharedTransitionNavigationPage.SetTransitionSelectedGroup(this, processo.Id);
-            Navigation.PushAsync(new FinalView(processo, UnidadeItem.BackgroundStartColor, UnidadeItem.BackgroundEndColor));
-        }
     }
 }

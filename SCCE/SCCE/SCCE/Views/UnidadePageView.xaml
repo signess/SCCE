@@ -7,7 +7,6 @@
     xmlns:fontIcon="clr-namespace:SCCE.Fonts"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    xmlns:st="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
     NavigationPage.HasNavigationBar="False"
     mc:Ignorable="d">
     <ContentPage.Content>
@@ -16,13 +15,11 @@
             RowDefinitions="1.2*, 2*"
             VerticalOptions="FillAndExpand">
             <Image
-                st:Transition.Name="UnidadeImage"
                 Aspect="AspectFill"
                 HorizontalOptions="FillAndExpand"
                 Source="{Binding UnidadeItem.Image}"
                 VerticalOptions="FillAndExpand" />
             <BoxView
-                st:Transition.Name="UnidadeImage"
                 HorizontalOptions="FillAndExpand"
                 Opacity=".25"
                 VerticalOptions="FillAndExpand"
@@ -96,7 +93,6 @@
                                     <DataTemplate>
                                         <pv:PancakeView
                                             Padding="10"
-                                            st:Transition.Name="BombaSub"
                                             BackgroundColor="#E9E9E9"
                                             CornerRadius="10"
                                             HeightRequest="70"
@@ -109,9 +105,6 @@
                                                     <pv:GradientStop Offset="1" Color="#f5faff" />
                                                 </pv:GradientStopCollection>
                                             </pv:PancakeView.BackgroundGradientStops>
-                                            <pv:PancakeView.GestureRecognizers>
-                                                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="UnidadeTapped" />
-                                            </pv:PancakeView.GestureRecognizers>
                                             <Grid ColumnDefinitions="200,*" RowDefinitions="Auto,*">
                                                 <Label
                                                     FontFamily="ThemeFontBold"

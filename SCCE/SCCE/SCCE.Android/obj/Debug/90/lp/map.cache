@@ -1,6 +1,9 @@
+CarouselView.FormsPlugin.Android
+Com.Android.DeskClock
+Com.ViewPagerIndicator
 FormsViewGroup
 PCLExt.FileStorage
-Plugin.SharedTransitions
+Rg.Plugins.Popup
 SQLitePCLRaw.lib.e_sqlite3.android
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Core.Runtime
@@ -43,3 +46,4 @@ Xamarin.Essentials
 Xamarin.Forms.PancakeView
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
+Lottie.Android

@@ -15,16 +15,10 @@ namespace SCCE.ViewModels
         public IValidator _dataValidator;
         public IDataRepository _dataRepository;
         protected IMessageService _messageService;
-        bool isBusy = false;
 
         public BaseViewModel()
         {
             _messageService = DependencyService.Get<IMessageService>();
-        }
-        public bool IsBusy
-        {
-            get { return isBusy; }
-            set { SetProperty(ref isBusy, value); }
         }
 
         string title = string.Empty;

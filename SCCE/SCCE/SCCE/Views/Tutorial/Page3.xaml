@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="SCCE.Views.Tutorial.Page3"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation">
+    <ContentView.Resources>
+        <ResourceDictionary>
+
+            <xamanimation:ColorAnimation
+                x:Key="BackgroundColorAnimation"
+                Target="{x:Reference MainPanel}"
+                ToColor="{StaticResource Page3}"
+                Duration="500" />
+
+            <xamanimation:StoryBoard x:Key="InfoPanelAnimation" Target="{x:Reference InfoPanel}">
+                <xamanimation:FadeToAnimation Opacity="1" Duration="50" />
+                <xamanimation:TranslateToAnimation
+                    Easing="CubicIn"
+                    TranslateY="0"
+                    Duration="100" />
+            </xamanimation:StoryBoard>
+
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <Grid x:Name="MainPanel" BackgroundColor="{StaticResource Page2}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2.5*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <forms:AnimationView
+            x:Name="LottieAnimation"
+            Grid.Row="0"
+            Margin="12"
+            Animation="internetconnection.json"
+            AutoPlay="true"
+            HorizontalOptions="FillAndExpand"
+            RepeatCount="100"
+            RepeatMode="Infinite"
+            Scale="1"
+            Speed="0.75"
+            VerticalOptions="FillAndExpand" />
+        <StackLayout
+            x:Name="InfoPanel"
+            Grid.Row="1"
+            Padding="0,-24,0,0"
+            Opacity="0"
+            TranslationY="250"
+            VerticalOptions="Start">
+            <Label Style="{StaticResource TutorialTitle}" Text="Internet não é necessária, mas..." />
+            <Label Style="{StaticResource TutorialInfo}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Para podermos buscar informações no banco de dados, " />
+                        <Span Text="você precisa estar conectado a qualquer rede Sanesul, " />
+                        <Span Text="isso evita que usuarios maliciosos tenha acesso a essas informações." />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </Grid>
+</ContentView>

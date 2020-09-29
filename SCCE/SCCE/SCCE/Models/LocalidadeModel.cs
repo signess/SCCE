@@ -7,7 +7,7 @@ namespace SCCE.Models
 {
     public class LocalidadeModel
     {
-        public string Id => Guid.NewGuid().ToString("N");
+        public string Id => Guid.NewGuid().ToString();
         [JsonProperty("codigo")]
         public int Codigo { get; set; }
         [JsonProperty("apelido")]
