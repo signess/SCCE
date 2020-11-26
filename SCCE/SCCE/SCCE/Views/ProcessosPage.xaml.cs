@@ -10,10 +10,10 @@ namespace SCCE.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProcessosPage : ContentPage
     {
-        readonly LocalidadeModel localidade;
+        readonly ObjetoFuncionalModel localidade;
         readonly string startColor;
         readonly string endColor;
-        public ProcessosPage(LocalidadeModel localidade, string startColor, string endColor)
+        public ProcessosPage(ObjetoFuncionalModel localidade, string startColor, string endColor)
         {
             InitializeComponent();
             this.localidade = localidade;

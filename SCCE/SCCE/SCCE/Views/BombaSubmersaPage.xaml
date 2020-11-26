@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SCCE.Views.BombaSubmersaPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:fontIcon="clr-namespace:SCCE.Fonts"
+    xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    x:Name="BombaSubmersaView"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid RowDefinitions="Auto,*">
+            <pv:PancakeView
+                Grid.RowSpan="2"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <pv:PancakeView.BackgroundGradientStops>
+                    <pv:GradientStopCollection>
+                        <pv:GradientStop Offset="0" Color="{Binding BindingContext.BackgroundStartColor, Source={x:Reference Name=BombaSubmersaView}}" />
+                        <pv:GradientStop Offset="1" Color="{Binding BindingContext.BackgroundEndColor, Source={x:Reference Name=BombaSubmersaView}}" />
+                    </pv:GradientStopCollection>
+                </pv:PancakeView.BackgroundGradientStops>
+            </pv:PancakeView>
+            <Grid ColumnDefinitions="Auto,Auto,*" RowDefinitions="50">
+                <Button
+                    Margin="-20,0,0,0"
+                    BackgroundColor="Transparent"
+                    Clicked="GoBack"
+                    FontFamily="{StaticResource PostFontIcon}"
+                    FontSize="Large"
+                    HorizontalOptions="Start"
+                    Text="{x:Static fontIcon:Fonts.Back}"
+                    TextColor="White"
+                    VerticalOptions="Start" />
+                <Label
+                    Grid.Column="1"
+                    Margin="-30,0,0,0"
+                    FontFamily="ThemeFontBold"
+                    FontSize="20"
+                    Text="Voltar"
+                    TextColor="White"
+                    VerticalOptions="Center" />
+                <Label
+                    Grid.Column="2"
+                    FontFamily="ThemeFontMedium"
+                    FontSize="18"
+                    HorizontalTextAlignment="End"
+                    Text="{Binding Processo.Descricao}"
+                    TextColor="White"
+                    VerticalTextAlignment="Center" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GoBack" />
+                </Grid.GestureRecognizers>
+            </Grid>
+            <pv:PancakeView
+                Grid.Row="1"
+                Margin="10,10"
+                Padding="10"
+                BackgroundColor="#E9E9E9"
+                CornerRadius="10"
+                HorizontalOptions="FillAndExpand">
+                <pv:PancakeView.BackgroundGradientStops>
+                    <pv:GradientStopCollection>
+                        <pv:GradientStop Offset="0" Color="#c3cdd6" />
+                        <pv:GradientStop Offset="0.5" Color="#dde7f0" />
+                        <pv:GradientStop Offset="1" Color="#f5faff" />
+                    </pv:GradientStopCollection>
+                </pv:PancakeView.BackgroundGradientStops>
+                <StackLayout
+                    x:Name="bombaSubmersaList"
+                    BackgroundColor="Transparent"
+                    BindableLayout.ItemsSource="{Binding BombaSubmersa}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,1,180,1,*">
+                                <Label
+                                    FontFamily="ThemeFontBold"
+                                    FontSize="18"
+                                    Text="{Binding Codigo, StringFormat='ID IFS: {0:N}'}"
+                                    TextColor="Black" />
+                                <Label
+                                    Grid.Row="1"
+                                    FontFamily="ThemeFontMedium"
+                                    FontSize="16"
+                                    Text="{Binding NumeroSerie, StringFormat='Nº Serial: {0:N}'}"
+                                    TextColor="#515151" />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    FontFamily="ThemeFontMedium"
+                                    FontSize="16"
+                                    Text="{Binding Patrimonio, StringFormat='Nº Patrimônio: {0:N}'}"
+                                    TextColor="#515151" />
+
+                                <BoxView
+                                    Grid.Row="2"
+                                    Grid.ColumnSpan="2"
+                                    BackgroundColor="{Binding BindingContext.BackgroundStartColor, Source={x:Reference Name=BombaSubmersaView}}"
+                                    HeightRequest="1"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Start" />
+                                <ScrollView
+                                    Grid.Row="3"
+                                    Grid.ColumnSpan="2">
+                                    <Label
+                                        FontFamily="ThemeFontMedium"
+                                        FontSize="16"
+                                        Text="{Binding Nota}"
+                                        TextColor="#515151" />
+                                </ScrollView>
+                                <BoxView
+                                    Grid.Row="4"
+                                    Grid.ColumnSpan="2"
+                                    BackgroundColor="{Binding BindingContext.BackgroundStartColor, Source={x:Reference Name=BombaSubmersaView}}"
+                                    HeightRequest="1"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="Start" />
+                                <ListView
+                                    Grid.Row="5"
+                                    Grid.ColumnSpan="2"
+                                    HasUnevenRows="True"
+                                    ItemsSource="{Binding DadosTecnicos}"
+                                    VerticalOptions="FillAndExpand">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand">
+                                                    <Label
+                                                        FontFamily="ThemeFontBold"
+                                                        FontSize="16"
+                                                        Text="{Binding Descricao}"
+                                                        TextColor="Black" />
+                                                    <Label
+                                                        FontSize="14"
+                                                        Text="{Binding ValorNo}"
+                                                        TextColor="Red" />
+                                                    <Label
+                                                        FontSize="14"
+                                                        Text="{Binding ValorTexto}"
+                                                        TextColor="Red" />
+                                                    <Label FontSize="12" Text="{Binding Unidade}" />
+                                                </StackLayout>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </Grid>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </pv:PancakeView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

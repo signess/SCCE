@@ -14,12 +14,100 @@
     <None Remove="Fonts\NunitoSans-Bold.ttf" />
     <None Remove="Fonts\NunitoSans-Regular.ttf" />
     <None Remove="Fonts\NunitoSans-SemiBold.ttf" />
+    <None Remove="Images\PADRAO.jpg" />
+    <None Remove="Images\UNIDADEAGUACLARA.jpg" />
+    <None Remove="Images\UNIDADEAGUASDEMIRANDA.jpg" />
+    <None Remove="Images\UNIDADEALBUQUERQUE.jpg" />
+    <None Remove="Images\UNIDADEALTOCARACOL.jpg" />
+    <None Remove="Images\UNIDADEALVESPLANALTO.jpg" />
+    <None Remove="Images\UNIDADEAMAMBAI.jpg" />
+    <None Remove="Images\UNIDADEAMANDINA.jpg" />
+    <None Remove="Images\UNIDADEANASTACIO.jpg" />
+    <None Remove="Images\UNIDADEANAURILANDIA.jpg" />
+    <None Remove="Images\UNIDADEANGELICA.jpg" />
+    <None Remove="Images\UNIDADEANTONIOJOAO.jpg" />
+    <None Remove="Images\UNIDADEAPARECIDADOTABOADO.jpg" />
+    <None Remove="Images\UNIDADEAQUIDAUANA.jpg" />
+    <None Remove="Images\UNIDADEARALMOREIRA.jpg" />
+    <None Remove="Images\UNIDADEARAPUA.jpg" />
+    <None Remove="Images\UNIDADEBATAGUASSU.jpg" />
+    <None Remove="Images\UNIDADEBATAYPORA.jpg" />
+    <None Remove="Images\UNIDADEBOCAJA.jpg" />
+    <None Remove="Images\UNIDADEBODOQUENA.jpg" />
+    <None Remove="Images\UNIDADEBONITO.jpg" />
+    <None Remove="Images\UNIDADEBRASILANDIA.jpg" />
+    <None Remove="Images\UNIDADECAARAPO.jpg" />
+    <None Remove="Images\UNIDADECABECEIRADOAPA.jpg" />
+    <None Remove="Images\UNIDADECAMAPUA.jpg" />
+    <None Remove="Images\UNIDADECAMISAO.jpg" />
+    <None Remove="Images\UNIDADECARACOL.jpg" />
+    <None Remove="Images\UNIDADECARUMBE.jpg" />
+    <None Remove="Images\UNIDADECASSILANDIA.jpg" />
+    <None Remove="Images\UNIDADECHAPADAODOSUL.jpg" />
+    <None Remove="Images\UNIDADECORONELSAPUCAIA.jpg" />
+    <None Remove="Images\UNIDADECORUMBA.jpg" />
+    <None Remove="Images\UNIDADECOXIM.jpg" />
+    <None Remove="Images\UNIDADECRISTALINA.jpg" />
+    <None Remove="Images\UNIDADECRUZALTINA.jpg" />
+    <None Remove="Images\UNIDADECULTURAMA.jpg" />
+    <None Remove="Images\UNIDADEDEBRASA.jpg" />
+    <None Remove="Images\UNIDADEDEODAPOLIS.jpg" />
+    <None Remove="Images\UNIDADEDOISIRMAOSDOBURITI.jpg" />
+    <None Remove="Images\UNIDADEDOURADINA.jpg" />
+    <None Remove="Images\UNIDADEDOURADOS.jpg" />
+    <None Remove="Images\UNIDADEELDORADO.jpg" />
+    <None Remove="Images\UNIDADEFATIMADOSUL.jpg" />
+    <None Remove="Images\UNIDADEMARACAJU.jpg" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Fonts\NunitoSans-Bold.ttf" />
     <EmbeddedResource Include="Fonts\NunitoSans-Regular.ttf" />
     <EmbeddedResource Include="Fonts\NunitoSans-SemiBold.ttf" />
+    <EmbeddedResource Include="Images\PADRAO.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEAGUACLARA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEAGUASDEMIRANDA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEALBUQUERQUE.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEALTOCARACOL.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEALVESPLANALTO.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEAMAMBAI.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEAMANDINA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEANASTACIO.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEANAURILANDIA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEANGELICA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEANTONIOJOAO.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEAPARECIDADOTABOADO.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEAQUIDAUANA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEARALMOREIRA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEARAPUA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEBATAGUASSU.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEBATAYPORA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEBOCAJA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEBODOQUENA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEBONITO.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEBRASILANDIA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADECAARAPO.jpg" />
+    <EmbeddedResource Include="Images\UNIDADECABECEIRADOAPA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADECAMAPUA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADECAMISAO.jpg" />
+    <EmbeddedResource Include="Images\UNIDADECARACOL.jpg" />
+    <EmbeddedResource Include="Images\UNIDADECARUMBE.jpg" />
+    <EmbeddedResource Include="Images\UNIDADECASSILANDIA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADECHAPADAODOSUL.jpg" />
+    <EmbeddedResource Include="Images\UNIDADECORONELSAPUCAIA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADECORUMBA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADECOXIM.jpg" />
+    <EmbeddedResource Include="Images\UNIDADECRISTALINA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADECRUZALTINA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADECULTURAMA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEDEBRASA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEDEODAPOLIS.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEDOISIRMAOSDOBURITI.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEDOURADINA.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEDOURADOS.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEELDORADO.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEFATIMADOSUL.jpg" />
+    <EmbeddedResource Include="Images\UNIDADEMARACAJU.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,19 +121,28 @@
     <PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
     <PackageReference Include="Xamanimation" Version="1.3.0" />
+    <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.6.0-pre1" />  
     <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.1.0.714" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\BombaSubmersaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Database\DataPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\FinalView.xaml">
+    <EmbeddedResource Update="Views\LocalidadesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\LocalidadesPage.xaml">
+    <EmbeddedResource Update="Views\Popup\ActionBox.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popup\MessageBox.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ProcessosPage.xaml">
@@ -72,9 +169,6 @@
     <EmbeddedResource Update="Views\Tutorial\TutorialPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\UnidadePageView.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\WelcomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -82,5 +176,12 @@
 
   <ItemGroup>
     <Folder Include="Helpers\" />
+    <Folder Include="ViewModels\Popup\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v10.0\Mono.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

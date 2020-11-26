@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "l6sJyUyFdiW8IM5IIiMrKcNrsoLIipAegqGgQ099bF8RAGGwym+QFNTSn+QnRcNxvr71BCDgAcQzxU9K1lwUYg==",
+  "dgSpecHash": "31lQGhGpHNqLUPKRk3SmP7I8OZZw2m4OqYLBCKUhjevvTUPP1AQx1Rxm8Ov3W+9e48J+rs0nE3SFAG08uKMyyw==",
   "success": true,
   "projectFilePath": "C:\\Users\\suporte\\Source\\Repos\\signess\\SCCE\\SCCE\\SCCE\\SCCE.Android\\SCCE.Android.csproj",
   "expectedPackageFiles": [
@@ -77,6 +77,9 @@
     "C:\\Users\\suporte\\.nuget\\packages\\xamarin.androidx.versionedparcelable\\1.1.1.5\\xamarin.androidx.versionedparcelable.1.1.1.5.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\xamarin.androidx.viewpager\\1.0.0.5\\xamarin.androidx.viewpager.1.0.0.5.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\xamarin.essentials\\1.6.0-pre1\\xamarin.essentials.1.6.0-pre1.nupkg.sha512",
+    "C:\\Users\\suporte\\.nuget\\packages\\xamarin.ffimageloading\\2.4.11.982\\xamarin.ffimageloading.2.4.11.982.nupkg.sha512",
+    "C:\\Users\\suporte\\.nuget\\packages\\xamarin.ffimageloading.forms\\2.4.11.982\\xamarin.ffimageloading.forms.2.4.11.982.nupkg.sha512",
+    "C:\\Users\\suporte\\.nuget\\packages\\xamarin.ffimageloading.transformations\\2.4.11.982\\xamarin.ffimageloading.transformations.2.4.11.982.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\xamarin.forms.pancakeview\\2.1.0.714\\xamarin.forms.pancakeview.2.1.0.714.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\xamarin.google.android.material\\1.0.0.1\\xamarin.google.android.material.1.0.0.1.nupkg.sha512"

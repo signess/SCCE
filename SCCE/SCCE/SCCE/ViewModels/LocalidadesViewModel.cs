@@ -1,7 +1,10 @@
-﻿using SCCE.Models;
+﻿using Android;
+using SCCE.Models;
 using SCCE.Views;
+using System;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
+using System.IO;
+using System.Reflection;
 using Xamarin.Forms;
 
 namespace SCCE.ViewModels
@@ -12,22 +15,23 @@ namespace SCCE.ViewModels
         public string BackgroundStartColor => Regional.BackgroundStartColor;
         public string BackgroundEndColor => Regional.BackgroundEndColor;
         public string Nome => Regional.Nome;
-        public ObservableCollection<LocalidadeModel> LocalidadesList { get; set; }
-        private Command<LocalidadeModel> navigatetoProcessos;
-        public Command<LocalidadeModel> NavigateToProcessos
+        public string PlaceHolder { get; set; }
+        public ObservableCollection<ObjetoFuncionalModel> LocalidadesList { get; set; }
+        private Command<ObjetoFuncionalModel> navigatetoProcessos;
+        public Command<ObjetoFuncionalModel> NavigateToProcessos
         {
             get
             {
-                return navigatetoProcessos ?? (navigatetoProcessos = new Command<LocalidadeModel>(localidadeModel =>
+                return navigatetoProcessos ?? (navigatetoProcessos = new Command<ObjetoFuncionalModel>(localidadeModel =>
                 {
                     Navigation.PushAsync(new ProcessosPage(localidadeModel, BackgroundStartColor, BackgroundEndColor));
                 }));
             }
         }
 
-        private ObservableCollection<LocalidadeModel> GetProperties()
+        private ObservableCollection<ObjetoFuncionalModel> GetProperties()
         {
-            return new ObservableCollection<LocalidadeModel>(Regional.Localidades);
+            return new ObservableCollection<ObjetoFuncionalModel>(Regional.Localidades);
         }
 
 
@@ -35,12 +39,12 @@ namespace SCCE.ViewModels
         {
             Navigation = navigation;
             Regional = regional;
-            
             LocalidadesList = GetProperties();
-            foreach(LocalidadeModel localidade in LocalidadesList)
+            foreach(ObjetoFuncionalModel localidade in LocalidadesList)
             {
-                var nome = Extensions.Extensions.RemoveWhitespace(localidade.Nome);
-                localidade.Image = nome + ".jpg";
+                var nome = Extensions.Extensions.RemoveWhitespace(localidade.Descricao);
+                nome = string.Format(nome + ".jpg");
+                localidade.Image = nome;   
             }
         }
 

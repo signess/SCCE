@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rg:PopupPage
+    x:Class="SCCE.Views.Popup.ActionBox"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:rg="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:rgAnim="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup">
+    <rg:PopupPage.Animation>
+        <rgAnim:MoveAnimation
+            DurationIn="200"
+            DurationOut="200"
+            PositionIn="Bottom"
+            PositionOut="Bottom" />
+    </rg:PopupPage.Animation>
+    <Grid HeightRequest="305" VerticalOptions="End">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Frame
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="2"
+            Padding="60,0"
+            BackgroundColor="White"
+            CornerRadius="30"
+            HeightRequest="255"
+            IsClippedToBounds="False"
+            VerticalOptions="End">
+            <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <StackLayout
+                    HorizontalOptions="Center"
+                    Orientation="Vertical"
+                    Spacing="10"
+                    VerticalOptions="Center">
+                    <Label
+                        x:Name="title"
+                        FontAttributes="Bold"
+                        FontSize="24"
+                        HorizontalTextAlignment="Center"
+                        Text="Title"
+                        TextColor="#2F7DFF" />
+                    <Label
+                        x:Name="description"
+                        FontSize="18"
+                        HorizontalTextAlignment="Center"
+                        Text="Description"
+                        TextColor="#363636" />
+                </StackLayout>
+            </Grid>
+        </Frame>
+        <pv:PancakeView
+            x:Name="imageFrame"
+            Grid.ColumnSpan="2"
+            BackgroundColor="WhiteSmoke"
+            CornerRadius="40"
+            HeightRequest="80"
+            HorizontalOptions="Center"
+            TranslationY="5"
+            VerticalOptions="Start"
+            WidthRequest="80">
+            <pv:PancakeView.Shadow>
+                <pv:DropShadow
+                    x:Name="shadow"
+                    Offset="0, 10"
+                    Color="#363636" />
+            </pv:PancakeView.Shadow>
+            <StackLayout>
+                <forms:AnimationView
+                    x:Name="animation"
+                    Margin="-100"
+                    AutoPlay="true"
+                    HorizontalOptions="FillAndExpand"
+                    RepeatCount="100"
+                    RepeatMode="Restart"
+                    Scale="1"
+                    Speed="1"
+                    VerticalOptions="FillAndExpand" />
+            </StackLayout>
+        </pv:PancakeView>
+        <Button
+            x:Name="cancelButton"
+            Grid.Row="1"
+            BackgroundColor="#ababab"
+            Clicked="Cancel_Clicked"
+            HeightRequest="45"
+            Text="Cancel"
+            TextColor="White" />
+        <Button
+            x:Name="confirmationButton"
+            Grid.Row="1"
+            Grid.Column="1"
+            BackgroundColor="#2F7DFF"
+            Clicked="Confirmation_Clicked"
+            HeightRequest="45"
+            Text="Confirm"
+            TextColor="White" />
+    </Grid>
+</rg:PopupPage>

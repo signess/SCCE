@@ -4,11 +4,9 @@ C:\Users\suporte\source\repos\signess\SCCE\SCCE\SCCE\SCCE\bin\Debug\netstandard2
 C:\Users\suporte\source\repos\signess\SCCE\SCCE\SCCE\SCCE\bin\Debug\netstandard2.0\SCCE.pdb
 C:\Users\suporte\source\repos\signess\SCCE\SCCE\SCCE\SCCE\obj\Debug\netstandard2.0\SCCE.csprojAssemblyReference.cache
 C:\Users\suporte\source\repos\signess\SCCE\SCCE\SCCE\SCCE\obj\Debug\netstandard2.0\App.xaml.g.cs
-C:\Users\suporte\source\repos\signess\SCCE\SCCE\SCCE\SCCE\obj\Debug\netstandard2.0\Views\FinalView.xaml.g.cs
 C:\Users\suporte\source\repos\signess\SCCE\SCCE\SCCE\SCCE\obj\Debug\netstandard2.0\Views\LocalidadesPage.xaml.g.cs
 C:\Users\suporte\source\repos\signess\SCCE\SCCE\SCCE\SCCE\obj\Debug\netstandard2.0\Views\ProcessosPage.xaml.g.cs
 C:\Users\suporte\source\repos\signess\SCCE\SCCE\SCCE\SCCE\obj\Debug\netstandard2.0\Views\RegionaisPage.xaml.g.cs
-C:\Users\suporte\source\repos\signess\SCCE\SCCE\SCCE\SCCE\obj\Debug\netstandard2.0\Views\UnidadePageView.xaml.g.cs
 C:\Users\suporte\source\repos\signess\SCCE\SCCE\SCCE\SCCE\obj\Debug\netstandard2.0\Views\WelcomePage.xaml.g.cs
 C:\Users\suporte\source\repos\signess\SCCE\SCCE\SCCE\SCCE\obj\Debug\netstandard2.0\SCCE.AssemblyInfoInputs.cache
 C:\Users\suporte\source\repos\signess\SCCE\SCCE\SCCE\SCCE\obj\Debug\netstandard2.0\SCCE.AssemblyInfo.cs
@@ -22,5 +20,12 @@ C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE\obj\Debug\netstandard2
 C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE\obj\Debug\netstandard2.0\Views\Tutorial\Page5.xaml.g.cs
 C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE\obj\Debug\netstandard2.0\Views\Tutorial\Page6.xaml.g.cs
 C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE\obj\Debug\netstandard2.0\Views\Database\DataPage.xaml.g.cs
+C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE\obj\Debug\netstandard2.0\Views\Popup\MessageBox.xaml.g.cs
+C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE\obj\Debug\netstandard2.0\Views\Popup\ActionBox.xaml.g.cs
+C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE\obj\Debug\netstandard2.0\Views\BombaSubmersaPage.xaml.g.cs
+C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE\bin\Debug\netstandard2.0\Mono.Android.dll
+C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE\bin\Debug\netstandard2.0\Mono.Android.pdb
+C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE\bin\Debug\netstandard2.0\Mono.Android.xml
+C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE\obj\Debug\netstandard2.0\SCCE.csproj.CopyComplete
 C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE\obj\Debug\netstandard2.0\SCCE.csproj.CoreCompileInputs.cache
 C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE\obj\Debug\netstandard2.0\XamlC.stamp

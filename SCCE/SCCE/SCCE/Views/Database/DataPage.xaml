@@ -10,36 +10,48 @@
         <animations:ScaleAnimation
             DurationIn="500"
             EasingIn="BounceOut"
-            PositionIn="Bottom"
+            PositionIn="Center"
             PositionOut="Center"
             ScaleIn="1"
             ScaleOut="0.7" />
     </pages:PopupPage.Animation>
-    <ScrollView HorizontalOptions="Center" VerticalOptions="Center">
-        <AbsoluteLayout>
-            <Frame
-                x:Name="FrameContainer"
-                Margin="15"
-                BackgroundColor="White"
-                HorizontalOptions="Center">
-                <StackLayout
-                    Padding="10,5"
-                    IsClippedToBounds="True"
-                    Spacing="3">
-                    <forms:AnimationView
-                        x:Name="LottieAnimation"
-                        Margin="10"
-                        Animation="download.json"
-                        AutoPlay="true"
-                        HeightRequest="150"
-                        HorizontalOptions="Center"
-                        RepeatCount="100"
-                        RepeatMode="Restart"
-                        Scale="1"
-                        Speed="1"
-                        WidthRequest="150" />
-                </StackLayout>
-            </Frame>
-        </AbsoluteLayout>
-    </ScrollView>
+    <StackLayout
+        Padding="0,20"
+        HorizontalOptions="CenterAndExpand"
+        VerticalOptions="StartAndExpand">
+        <Frame
+            x:Name="FrameContainer"
+            Margin="15"
+            BackgroundColor="White"
+            CornerRadius="5"
+            HeightRequest="200"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand">
+            <StackLayout
+                Padding="10,5"
+                IsClippedToBounds="True"
+                Spacing="3">
+                <forms:AnimationView
+                    x:Name="LottieAnimation"
+                    Margin="-20"
+                    Animation="download.json"
+                    AutoPlay="true"
+                    HeightRequest="150"
+                    HorizontalOptions="Center"
+                    RepeatCount="100"
+                    RepeatMode="Restart"
+                    Scale="1"
+                    Speed="1"
+                    WidthRequest="150" />
+                <Label
+                    FontSize="30"
+                    HorizontalTextAlignment="Center"
+                    Text="Buscando dados..."
+                    TextColor="Black" />
+            </StackLayout>
+
+
+
+        </Frame>
+    </StackLayout>
 </pages:PopupPage>

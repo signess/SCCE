@@ -4,6 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:Name="LocalidadesView"
@@ -52,8 +53,10 @@
                                             CommandParameter="{Binding .}"
                                             NumberOfTapsRequired="1" />
                                     </Grid.GestureRecognizers>
-                                    <Image
+                                    <ff:CachedImage
                                         Aspect="AspectFill"
+                                        DownsampleToViewSize="True"
+                                        ErrorPlaceholder="PADRAO.jpg"
                                         HeightRequest="80"
                                         Source="{Binding Image}" />
                                     <StackLayout
@@ -63,7 +66,7 @@
                                         <Label
                                             FontFamily="ThemeFontBold"
                                             FontSize="20"
-                                            Text="{Binding Nome, StringFormat='UNIDADE {0:N}'}"
+                                            Text="{Binding Descricao}"
                                             TextColor="White" />
                                     </StackLayout>
                                 </Grid>

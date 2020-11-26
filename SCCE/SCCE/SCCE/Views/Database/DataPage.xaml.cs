@@ -2,8 +2,10 @@
 using Rg.Plugins.Popup.Pages;
 using Rg.Plugins.Popup.Services;
 using SCCE.Data;
+using SCCE.Extensions;
 using SCCE.Models;
 using SCCE.Services;
+using SCCE.Views.Popup;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -25,142 +27,185 @@ namespace SCCE.Views.Database
             _dataRepository = new DataRepository();
         }
 
-        private async Task TryLogin()
+        private async void TryLogin()
         {
             LoginService services = new LoginService();
             var getLoginDetail = await services.CheckLoginIfExists("evandro", "sanesoares");
 
             if (getLoginDetail)
             {
-                await DisplayAlert("Conectado com sucesso!", "O download de dados começara agora!", "Okay");
-                await RetriveDataFromCloud();
+                //await DisplayAlert("Conectado com sucesso!", "O download de dados começara agora!", "Okay");
+                var popupPage = new MessageBox("Conectado com sucesso!", "O download de dados começara agora!", "tick.json", "Continuar", Lottie.Forms.RepeatMode.Infinite, 0, 0);
+
+                popupPage.Disappearing += async (c, d) =>
+                {
+                    await RetriveDataFromCloud();
+                };
+                await PopupNavigation.Instance.PushAsync(popupPage);
             }
             else
             {
-                var failed = await DisplayAlert("Conexão indisponivel", "Não foi possível estabelecer uma conexão com o servidor. Verifique se está conectado a uma rede Sanesul.", "Tentar novamente", "Fechar aplicativo");
-                if (failed)
+                //var failed = await DisplayAlert("Conexão indisponivel", "Não foi possível estabelecer uma conexão com o servidor. Verifique se está conectado a uma rede Sanesul.", "Tentar novamente", "Fechar aplicativo");
+                var choice = false;
+                var popupPage = new ActionBox("Conexão indisponivel", "Não foi possível estabelecer uma conexão com o servidor. Verifique se está conectado a uma rede Sanesul.", "fail.json", "Tentar novamente", "Fechar aplicativo", Lottie.Forms.RepeatMode.Infinite, 0, 0);
+                popupPage.CallbackEvent += (c, arg) =>
                 {
-                    await TryLogin();
-                }
-                else
+                    choice = arg;
+                };
+                popupPage.Disappearing += (c, d) =>
                 {
-                    System.Environment.Exit(0);
-                }
+                    if (choice)
+                    {
+                        TryLogin();
+                    }
+                    else
+                    {
+                        Application.Current.Quit();
+                    }
+                };
+                await PopupNavigation.Instance.PushAsync(popupPage);
             }
         }
 
-        private async Task ToNextPage()
+        private async void ToNextPage()
         {
             await Navigation.PushModalAsync(new NavigationPage(new RegionaisPage()));
             await PopupNavigation.Instance.PopAsync();
-
-            /*
-            foreach (var item in Navigation.NavigationStack)
-            {
-                if (item.GetType().Name == "WelcomePage")
-                {
-                    Navigation.RemovePage(item);
-                }
-            }*/
         }
 
         private async void CheckIfShouldUpdateDatabase()
         {
             if (App.DataList.Count > 0)
             {
-                bool resposta = await DisplayAlert("Atualização", "Deseja buscar por atualizações no banco de dados?", "Sim", "Não");
-                if (resposta)
+                //bool resposta = await DisplayAlert("Atualização", "Deseja buscar por atualizações no banco de dados?", "Sim", "Não");
+                bool choice = false;
+                var popupPage = new ActionBox("Atualização", "Deseja buscar por atualizações no banco de dados?", "update.json", "Sim", "Não");
+                popupPage.CallbackEvent += (c, arg) =>
                 {
-                    _dataRepository.DeleteAllData();
-                    await TryLogin();
-                }
-                else
+                    choice = arg;
+                };
+                popupPage.Disappearing += (c, d) =>
                 {
-                    await ToNextPage();
-                }
+                    if (choice)
+                    {
+                        _dataRepository.DeleteAllData();
+                        TryLogin();
+                    }
+                    else
+                    {
+                        ToNextPage();
+                    }
+                };
+                await PopupNavigation.Instance.PushAsync(popupPage);
             }
             else
             {
-                await TryLogin();
+                TryLogin();
+            }
+        }
+
+        private async Task<List<ObjetoSerialModel>> EstruturarDadosTecnicos()
+        {
+            try
+            {
+                List<DadosTecnicosModel> dadosTecnicos = await apiService.GetDadosTecnicosAsync();
+                List<ObjetoSerialModel> objetoSeriais = await apiService.GetObjetosSerialAsync();
+                List<ObjetoSerialModel> bombasSubmersas = objetoSeriais.FindAll(delegate (ObjetoSerialModel bhs) { return bhs.Codigo.Contains("BHS"); });
+                for (int z = 0; z < bombasSubmersas.Count; z++)
+                {
+                    bombasSubmersas[z].DadosTecnicos = dadosTecnicos.FindAll(d => d.ID.Contains(bombasSubmersas[z].Codigo));
+                }
+                return bombasSubmersas;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 
         private async Task RetriveDataFromCloud()
         {
+            List<BackgroundColors> bgColor = new List<BackgroundColors> {
+                    new BackgroundColors { BackgroundStartColor = "#6599FF", BackgroundEndColor = "#5988E0"},
+                    new BackgroundColors { BackgroundStartColor = "#feb103", BackgroundEndColor = "#b57e02"},
+                    new BackgroundColors {BackgroundStartColor = "#FE7E00", BackgroundEndColor = "#CE6300"},
+                    new BackgroundColors { BackgroundStartColor = "#98E603", BackgroundEndColor = "#82C103"},
+                    new BackgroundColors { BackgroundStartColor = "#039079", BackgroundEndColor = "#016353"},
+                    new BackgroundColors { BackgroundStartColor = "#33BECC", BackgroundEndColor = "#2896A0"},
+                    new BackgroundColors { BackgroundStartColor = "#FE4B4E", BackgroundEndColor = "#D84146"},
+                    new BackgroundColors { BackgroundStartColor = "#68B265", BackgroundEndColor = "#559152"},
+                    new BackgroundColors { BackgroundStartColor = "#32B300", BackgroundEndColor = "#2A9600"},
+                    new BackgroundColors { BackgroundStartColor = "#630396", BackgroundEndColor = "#6700b0"}
+            };
             try
             {
                 List<RegionalModel> regionais = await apiService.GetRegionaisAsync();
+                List<ObjetoSerialModel> bombasSubmersas = await EstruturarDadosTecnicos();
                 if (regionais == null || regionais.Count == 0)
                 {
                     //ERROR RETRIVE LIST
+                    var errorPopUpPage = new MessageBox("Erro na captura de dados", "Verifique suas conexão com a rede Sanesul e tente novamente!", "fail.json", "Continuar", Lottie.Forms.RepeatMode.Infinite, 0, 0);
+
+                    errorPopUpPage.Disappearing += (c, d) =>
+                    {
+                        Application.Current.Quit();
+                    };
                 }
                 else
                 {
-                    try
+                    for (int index = 0; index < regionais.Count; index++)
                     {
-                        List<LocalidadeModel> localidades = await apiService.GetLocalidadesAsync();
-                        if (localidades == null || localidades.Count == 0)
+                        if (regionais[index].Site == 15)
                         {
-                            Console.WriteLine($"Erro retriving localidades {localidades}");
+                            regionais.RemoveAt(index);
                         }
-                        else
+                        //Console.WriteLine($"{regionais[index].Nome} atribuido cor: {bgColor[index].BackgroundEndColor}");
+                        regionais[index].BackgroundStartColor = bgColor[index].BackgroundStartColor;
+                        regionais[index].BackgroundEndColor = bgColor[index].BackgroundEndColor;
+                        regionais[index].IsClickable = true;
+                        try
                         {
-                            List<BackgroundColors> bgColor = new List<BackgroundColors> {
-                                new BackgroundColors { BackgroundStartColor = "#32B300", BackgroundEndColor = "#2A9600"},
-                                new BackgroundColors { BackgroundStartColor = "#68B265", BackgroundEndColor = "#559152"},
-                                new BackgroundColors { BackgroundStartColor = "#6599FF", BackgroundEndColor = "#5988E0"},
-                                new BackgroundColors { BackgroundStartColor = "#630396", BackgroundEndColor = "#6700b0"},
-                                new BackgroundColors { BackgroundStartColor = "#98E603", BackgroundEndColor = "#82C103"},
-                                new BackgroundColors { BackgroundStartColor = "#039079", BackgroundEndColor = "#016353"},
-                                new BackgroundColors { BackgroundStartColor = "#33BECC", BackgroundEndColor = "#2896A0"},
-                                new BackgroundColors { BackgroundStartColor = "#FE4B4E", BackgroundEndColor = "#D84146"},
-                                new BackgroundColors { BackgroundStartColor = "#feb103", BackgroundEndColor = "#b57e02"},
-                                new BackgroundColors {BackgroundStartColor = "#FE7E00", BackgroundEndColor = "#CE6300"} };
-                            for (int index = 0; index < regionais.Count; index++)
+                            List<ObjetoFuncionalModel> objetosFuncional = await apiService.GetObjetosFuncionalAsync(regionais[index].Site);
+                            regionais[index].Localidades = objetosFuncional.FindAll(delegate (ObjetoFuncionalModel localidade) { return localidade.TipoDeObjeto.Contains("UNIDADE"); });
+                            if (regionais[index].Localidades != null)
                             {
-                                if (regionais[0].Codigo == 15)
+                                for (int i = 0; i < regionais[index].Localidades.Count; i++)
                                 {
-                                    regionais.RemoveAt(0);
-                                }
-                                Console.WriteLine($"{regionais[index].Nome} atribuido cor: {bgColor[index].BackgroundEndColor}");
-                                regionais[index].BackgroundStartColor = bgColor[index].BackgroundStartColor;
-                                regionais[index].BackgroundEndColor = bgColor[index].BackgroundEndColor;
-                                regionais[index].Localidades = localidades.FindAll(delegate (LocalidadeModel localidade) { return localidade.CentroCusto.StartsWith(regionais[index].CentroCusto); });
-                                if (regionais[index].Localidades != null)
-                                {
-                                    for (int i = 0; i < regionais[index].Localidades.Count; i++)
+                                    //Console.WriteLine($"Localidades de {regionais[index].Nome}: {regionais[index].Localidades[i].Descricao}");
+                                    //Prossiga pra atribuir itens de processo
+                                    regionais[index].Localidades[i].Processos = objetosFuncional.FindAll(delegate (ObjetoFuncionalModel processo) { return (processo.TipoDeObjeto.Contains("LOCINS") && processo.Ligacao.Contains(regionais[index].Localidades[i].Codigo)); });
+                                    if (regionais[index].Localidades[i].Processos != null)
                                     {
-                                        Console.WriteLine($"Localidades de {regionais[index].Nome}: {regionais[index].Localidades[i].Nome}");
-                                        try
+                                        regionais[index].Localidades[i].Processos.RemoveAll(p => p.Descricao.Contains("EEB") || p.Descricao.Contains("ETE") || p.Descricao.Contains("ESC") || p.Descricao.Contains("DESATIVADO"));
+                                        for (int x = 0; x < regionais[index].Localidades[i].Processos.Count; x++)
                                         {
-                                            List<ProcessosModel> processos = await apiService.GetProcessosAsync(regionais[index].Localidades[i].Codigo);
-                                            if (processos == null || processos.Count == 0)
+                                            string toRemove = string.Format("LOCINS " + regionais[index].Localidades[i].Processos[x].Codigo + " / ");
+                                            string toRemove2 = string.Format("LOCIN " + regionais[index].Localidades[i].Processos[x].Codigo + " / ");
+                                            if (regionais[index].Localidades[i].Processos[x].Descricao.Contains(toRemove))
                                             {
-                                                //ERROR RETRIVE LOCALIDADES
-                                                Console.WriteLine("Nao achou processos");
+                                                regionais[index].Localidades[i].Processos[x].Descricao = regionais[index].Localidades[i].Processos[x].Descricao.RemoveStart(toRemove);
                                             }
-                                            else
+                                            else if(regionais[index].Localidades[i].Processos[x].Descricao.Contains(toRemove2))
                                             {
-                                                //Prossiga pra atribuir itens de processo
-                                                regionais[index].Localidades[i].Processos = processos;
+                                                regionais[index].Localidades[i].Processos[x].Descricao = regionais[index].Localidades[i].Processos[x].Descricao.RemoveStart(toRemove2);
                                             }
-                                        }
-                                        catch (Exception ex)
-                                        {
-                                            throw ex;
+                                            regionais[index].Localidades[i].Processos[x].BombaSubmersa = bombasSubmersas.FindAll(bomba => bomba.Ligacao.Contains(regionais[index].Localidades[i].Processos[x].Codigo));
                                         }
                                     }
                                 }
-                                else
-                                {
-                                    Console.WriteLine("Nâo achou localidades!");
-                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Nâo achou localidades!");
                             }
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        throw ex;
+                        catch (Exception ex)
+                        {
+                            //Console.WriteLine(ex.Message);
+                            regionais[index].BackgroundStartColor = "#636362";
+                            regionais[index].BackgroundEndColor = "#636362";
+                            regionais[index].IsClickable = false;
+                        }
                     }
                     App.DataList = regionais;
                     var jsonString = JsonConvert.SerializeObject(regionais);
@@ -175,9 +220,13 @@ namespace SCCE.Views.Database
             {
                 throw ex;
             }
+            var popupPage = new MessageBox("Download completo", "Os dados foram baixados com sucesso!", "completed.json", "Continuar", Lottie.Forms.RepeatMode.Infinite, 0, 0);
 
-            await DisplayAlert("Download completo", "Os dados foram baixados com sucesso!", "OK");
-            await ToNextPage();
+            popupPage.Disappearing += (c, d) =>
+            {
+                ToNextPage();
+            };
+            await PopupNavigation.Instance.PushAsync(popupPage);
         }
 
         protected override void OnAppearingAnimationEnd()

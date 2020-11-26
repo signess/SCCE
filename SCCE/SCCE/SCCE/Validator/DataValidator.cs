@@ -8,8 +8,7 @@ namespace SCCE.Validator
         public DataValidator()
         {
             RuleFor(c => c.Nome).Must(n => ValidateStringEmpty(n)).WithMessage("Nome nao pode estar vazio");
-            RuleFor(c => c.Codigo).NotEmpty().WithMessage("Codigo nao pode estar vazio!");
-            RuleFor(c => c.CentroCusto).Must(n => ValidateStringEmpty(n)).WithMessage("CentroCrusto nao pode estar vazio");
+            RuleFor(c => c.Site).NotEmpty().WithMessage("Codigo nao pode estar vazio!");
         }
 
         private bool ValidateStringEmpty(string stringValue)

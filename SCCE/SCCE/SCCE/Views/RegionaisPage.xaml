@@ -55,9 +55,9 @@
                                     </pancake:PancakeView.BackgroundGradientStops>
                                     <Label
                                         FontFamily="ThemeFontBold"
-                                        FontSize="20"
+                                        FontSize="14"
                                         HorizontalOptions="Center"
-                                        Text="{Binding Sigla}"
+                                        Text="{Binding Nome}"
                                         TextColor="White" />
                                 </pancake:PancakeView>
                                 <pancake:PancakeView

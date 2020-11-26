@@ -8,14 +8,21 @@ namespace SCCE.Models
     public class LocalidadeModel
     {
         public string Id => Guid.NewGuid().ToString();
-        [JsonProperty("codigo")]
-        public int Codigo { get; set; }
-        [JsonProperty("apelido")]
-        public string Apelido { get; set; }
-        [JsonProperty("nome")]
-        public string Nome { get; set; }
-        [JsonProperty("centroCusto")]
-        public string CentroCusto { get; set; }
+        [JsonProperty("Contract")]
+        public int Site { get; set; }
+
+        [JsonProperty("Mch_Code")]
+        public string Codigo { get; set; }
+
+        [JsonProperty("Mch_Name")]
+        public string Descricao { get; set; }
+
+        [JsonProperty("Sup_Mch_Code")]
+        public string Ligacao { get; set; }
+
+        [JsonProperty("Obj_Level")]
+        public string TipoDeObjeto { get; set; }
+
         [TextBlob("processosBlobbed")]
         public List<ProcessosModel> Processos { get; set; }
         public string Image { get; set; }

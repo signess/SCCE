@@ -33,6 +33,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
+    <AotAssemblies>false</AotAssemblies>
+    <EnableLLVM>false</EnableLLVM>
+    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
+    <BundleAssemblies>false</BundleAssemblies>
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -90,6 +95,9 @@
     <PackageReference Include="Xamarin.AndroidX.AppCompat">
       <Version>1.2.0.4</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.0-pre1" />
     <PackageReference Include="Xamarin.Forms.PancakeView">
@@ -110,6 +118,10 @@
     <AndroidAsset Include="Assets\downloadbutton.json" />
     <AndroidAsset Include="Assets\location.json" />
     <AndroidAsset Include="Assets\download.json" />
+    <AndroidAsset Include="Assets\update.json" />
+    <AndroidAsset Include="Assets\tick.json" />
+    <AndroidAsset Include="Assets\fail.json" />
+    <AndroidAsset Include="Assets\completed.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -140,10 +152,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\DOURADOS.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEDOURADOS.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\MARACAJU.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEMARACAJU.jpg" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\back.png" />
@@ -164,127 +176,187 @@
     <AndroidResource Include="Resources\drawable\ms.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ANTONIOJOAO.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEANTONIOJOAO.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\APARECIDADOTABOADO.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEAPARECIDADOTABOADO.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\AQUIDAUANA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEAQUIDAUANA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ARALMOREIRA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEARALMOREIRA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ARAPUA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEARAPUA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BATAGUASSU.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEBATAGUASSU.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BATAYPORA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEBATAYPORA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BOCAJA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEBOCAJA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BODOQUENA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEBODOQUENA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BONITO.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEBONITO.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\BRASILANDIA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEBRASILANDIA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\CAARAPO.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADECAARAPO.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\CABECEIRADOAPA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADECABECEIRADOAPA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\CAMAPUA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADECAMAPUA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\CAMISAO.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADECAMISAO.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\CARACOL.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADECARACOL.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\CARUMBE.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADECARUMBE.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\CASSILANDIA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADECASSILANDIA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\CHAPADAODOSUL.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADECHAPADAODOSUL.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\CORONELSAPUCAIA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADECORONELSAPUCAIA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\CORUMBA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADECORUMBA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\COXIM.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADECOXIM.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\CRISTALINA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADECRISTALINA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\CRUZALTINA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADECRUZALTINA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\CULTURAMA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADECULTURAMA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\DEBRASA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEDEBRASA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\DEODAPOLIS.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEDEODAPOLIS.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\DOISIRMAOSDOBURITI.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEDOISIRMAOSDOBURITI.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\DOURADINA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEDOURADINA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ELDORADO.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEELDORADO.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\FATIMADOSUL.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEFATIMADOSUL.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\AGUACLARA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEAGUACLARA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\AGUASDEMIRANDA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEAGUASDEMIRANDA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ALBUQUERQUE.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEALBUQUERQUE.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ALTOCARACOL.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEALTOCARACOL.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ALVESPLANALTO.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEALVESPLANALTO.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\AMAMBAI.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEAMAMBAI.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\AMANDINA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEAMANDINA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ANASTACIO.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEANASTACIO.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ANAURILANDIA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEANAURILANDIA.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\ANGELICA.jpg" />
+    <AndroidResource Include="Resources\drawable\UNIDADEANGELICA.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\PADRAO.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher_foreground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher_round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher_foreground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher_round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_foreground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher_round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\ic_launcher_background.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\ic_launcher.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-anydpi-v26\ic_launcher_round.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher_foreground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_launcher_round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-ldpi\ic_launcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher_foreground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_launcher_round.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

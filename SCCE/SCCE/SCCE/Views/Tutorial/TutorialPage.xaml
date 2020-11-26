@@ -38,7 +38,11 @@
                 AutomationId="skip"
                 HorizontalOptions="EndAndExpand"
                 VerticalOptions="EndAndExpand">
-                <Label Style="{StaticResource SkipStyle}" Text="SKIP" />
+                <Button
+                    BackgroundColor="Transparent"
+                    Clicked="Skip_Clicked"
+                    Style="{StaticResource SkipStyle}"
+                    Text="SKIP" />
             </Grid>
         </Grid>
     </ContentPage.Content>

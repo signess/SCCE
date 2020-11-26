@@ -12,15 +12,16 @@ namespace SCCE.Services
     {
         private readonly HttpClient _client = new HttpClient();
         private List<RegionalModel> _regionais;
-        private List<LocalidadeModel> _localidades;
-        private List<ProcessosModel> _processos;
-
+        private List<ObjetoFuncionalModel> _objetosFuncional;
+        private List<ObjetoSerialModel> _objetosSerial;
+        private List<DadosTecnicosModel> _dadosTecnicos;
+        public int[] sites = { 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65};
 
         public async Task<List<RegionalModel>> GetRegionaisAsync()
         {
             try
             {
-                string url = string.Format("http://coredata.sanesul.ms.gov.br/api/regionais");
+                string url = string.Format("http://webservicedourados.sanesul.ms.gov.br/webservicedourados.asmx/ListRegionais?");
                 var response = await _client.GetAsync(url);
 
                 if (response.StatusCode == HttpStatusCode.NotFound)
@@ -40,49 +41,83 @@ namespace SCCE.Services
                 throw ex;
             }
         }
-        public async Task<List<LocalidadeModel>> GetLocalidadesAsync()
+        public async Task<List<ObjetoFuncionalModel>> GetObjetosFuncionalAsync(int site)
         {
             try
             {
-                string url = string.Format("http://coredata.sanesul.ms.gov.br/api/localidades/");
+                string url = string.Format("http://webservicedourados.sanesul.ms.gov.br/webservicedourados.asmx/ListObjFuncionais?site=" + site);
                 var response = await _client.GetAsync(url);
 
                 if (response.StatusCode == HttpStatusCode.NotFound)
                 {
-                    _localidades = new List<LocalidadeModel>();
+                    _objetosFuncional = new List<ObjetoFuncionalModel>();
                 }
                 else
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    var localidades = JsonConvert.DeserializeObject<List<LocalidadeModel>>(content);
-                    _localidades = new List<LocalidadeModel>(localidades);
+                    var localidades = JsonConvert.DeserializeObject<List<ObjetoFuncionalModel>>(content);
+                    _objetosFuncional = new List<ObjetoFuncionalModel>(localidades);
                 }
-                return _localidades;
+                return _objetosFuncional;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
         }
-
-        public async Task<List<ProcessosModel>> GetProcessosAsync(int _id)
+        public async Task<List<ObjetoSerialModel>> GetObjetosSerialAsync()
         {
             try
             {
-                string url = string.Format("http://scpo.sanesul.ms.gov.br/api/processos/"+_id+"/agua");
-                var response = await _client.GetAsync(url);
+                _objetosSerial = new List<ObjetoSerialModel>();
+                foreach (int i in sites)
+                {
+                    string url = string.Format("http://webservicedourados.sanesul.ms.gov.br/webservicedourados.asmx/ListObjSeriais?site=" + i);
+                    var response = await _client.GetAsync(url);
+                    if (response.StatusCode == HttpStatusCode.NotFound)
+                    {
+                        _objetosSerial = null;
+                        break;
+                    }
+                    else
+                    {
+                        var content = await response.Content.ReadAsStringAsync();
+                        var obj = JsonConvert.DeserializeObject<List<ObjetoSerialModel>>(content);
+                        _objetosSerial.AddRange(obj);
+                    }
 
-                if (response.StatusCode == HttpStatusCode.NotFound)
-                {
-                    _processos = new List<ProcessosModel>();
                 }
-                else
+                return _objetosSerial;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public async Task<List<DadosTecnicosModel>> GetDadosTecnicosAsync()
+        {
+            try
+            {
+                _dadosTecnicos = new List<DadosTecnicosModel>();
+                foreach(int i in sites)
                 {
-                    var content = await response.Content.ReadAsStringAsync();
-                    var processos = JsonConvert.DeserializeObject<List<ProcessosModel>>(content);
-                    _processos = new List<ProcessosModel>(processos);
+                    string url = string.Format("http://webservicedourados.sanesul.ms.gov.br/webservicedourados.asmx/ListObjSeriaisDadosTecnicos?site=" + i);
+                    var response = await _client.GetAsync(url);
+                    if (response.StatusCode == HttpStatusCode.NotFound)
+                    {
+                        _dadosTecnicos = null;
+                        break;
+                    }
+                    else
+                    {
+                        var content = await response.Content.ReadAsStringAsync();
+                        var obj = JsonConvert.DeserializeObject<List<DadosTecnicosModel>>(content);
+                        _dadosTecnicos.AddRange(obj);
+                    }
+
                 }
-                return _processos;
+
+                return _dadosTecnicos;
             }
             catch (Exception ex)
             {

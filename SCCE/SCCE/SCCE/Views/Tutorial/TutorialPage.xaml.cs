@@ -7,6 +7,7 @@ namespace SCCE.Views.Tutorial
     public partial class TutorialPage : ContentPage
     {
         private readonly View[] _views;
+
         public TutorialPage()
         {
             InitializeComponent();
@@ -30,6 +31,11 @@ namespace SCCE.Views.Tutorial
             {
                 animatedView.StartAnimation();
             }
+        }
+
+        private void Skip_Clicked(object sender, System.EventArgs e)
+        {
+            Carousel.Position = _views.Length - 1;
         }
     }
 }

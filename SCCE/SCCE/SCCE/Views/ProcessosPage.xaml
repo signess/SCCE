@@ -4,8 +4,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:fontIcon="clr-namespace:SCCE.Fonts"
-    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pv="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:Name="ProcessosView"
@@ -16,8 +16,10 @@
             HorizontalOptions="FillAndExpand"
             RowDefinitions="1.2*, 2*"
             VerticalOptions="FillAndExpand">
-            <Image
+            <ff:CachedImage
                 Aspect="AspectFill"
+                DownsampleToViewSize="True"
+                ErrorPlaceholder="PADRAO.jpg"
                 HorizontalOptions="FillAndExpand"
                 Source="{Binding Localidade.Image}"
                 VerticalOptions="FillAndExpand" />
@@ -80,7 +82,7 @@
                                     FontFamily="ThemeFontBold"
                                     FontSize="22"
                                     HorizontalOptions="Start"
-                                    Text="{Binding Localidade.Nome, StringFormat='UNIDADE {0:N}'}"
+                                    Text="{Binding Localidade.Descricao}"
                                     TextColor="White"
                                     VerticalOptions="Center" />
                             </StackLayout>
@@ -94,7 +96,7 @@
                             HorizontalOptions="Center"
                             Orientation="Horizontal"
                             Spacing="20">
-                            <StackLayout BindableLayout.ItemsSource="{Binding ProcessosList}">
+                            <StackLayout x:Name="processosList" BindableLayout.ItemsSource="{Binding ProcessosList}">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
                                         <pv:PancakeView
@@ -112,25 +114,26 @@
                                                 </pv:GradientStopCollection>
                                             </pv:PancakeView.BackgroundGradientStops>
                                             <Grid ColumnDefinitions="150,*" RowDefinitions="Auto,*">
+                                                <Grid.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                                                        Command="{Binding Path=BindingContext.NavigateToBombaSubmersa, Source={x:Reference processosList}}"
+                                                        CommandParameter="{Binding .}"
+                                                        NumberOfTapsRequired="1" />
+                                                </Grid.GestureRecognizers>
                                                 <Label
-                                                    FontFamily="ThemeFontBold"
-                                                    FontSize="20"
-                                                    Text="{Binding Codigo}"
-                                                    TextColor="#515151" />
-                                                <Label
-                                                    Grid.Column="1"
+                                                    Grid.ColumnSpan="2"
                                                     FontFamily="ThemeFontMedium"
-                                                    FontSize="20"
-                                                    Text="{Binding Locins, StringFormat='LOCINS {0:D2}'}"
-                                                    TextColor="#515151" />
+                                                    FontSize="16"
+                                                    Text="{Binding Codigo, StringFormat='LOCINS {0:N}'}"
+                                                    TextColor="Black" />
 
                                                 <Label
                                                     Grid.Row="1"
-                                                    Grid.ColumnSpan="1"
+                                                    Grid.ColumnSpan="2"
                                                     FontFamily="ThemeFontRegular"
                                                     FontSize="14"
-                                                    Text="endereco aqui"
-                                                    TextColor="#707070" />
+                                                    Text="{Binding Descricao}"
+                                                    TextColor="#515151" />
                                             </Grid>
                                         </pv:PancakeView>
                                     </DataTemplate>

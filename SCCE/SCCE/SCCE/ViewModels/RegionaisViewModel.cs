@@ -30,7 +30,8 @@ namespace SCCE.ViewModels
             Navigation = navigation;
             NavigatoToRegionalItem = new Command<RegionalModel>(async (param) =>
             {
-                await ExecuteNavigateToRegionalItemCommand(param);
+                if(param.IsClickable)
+                    await ExecuteNavigateToRegionalItemCommand(param);
             });
             Regionais = new ObservableCollection<RegionalModel>(App.DataList);
         }

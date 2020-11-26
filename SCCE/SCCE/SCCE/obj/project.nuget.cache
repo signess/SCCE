@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xhp1ZDHkEZQr1XtZSzPOgtkbPTh6aBlgh1UV2In/QaGnCH0QpNBUXJdDo2/qOV2G37jZG6b6dNWaohBiA58Kag==",
+  "dgSpecHash": "Bq6lXDpqeY+vXNwhyiNWxK0Xx/WacZsf6Ig+YqO5yoRBlHgn6I0YAz/ypf5MxQSvWWdWkpULbz5zBiaGyC6u9g==",
   "success": true,
   "projectFilePath": "C:\\Users\\suporte\\Source\\Repos\\signess\\SCCE\\SCCE\\SCCE\\SCCE\\SCCE.csproj",
   "expectedPackageFiles": [
@@ -73,6 +73,9 @@
     "C:\\Users\\suporte\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\xamanimation\\1.3.0\\xamanimation.1.3.0.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\xamarin.essentials\\1.6.0-pre1\\xamarin.essentials.1.6.0-pre1.nupkg.sha512",
+    "C:\\Users\\suporte\\.nuget\\packages\\xamarin.ffimageloading\\2.4.11.982\\xamarin.ffimageloading.2.4.11.982.nupkg.sha512",
+    "C:\\Users\\suporte\\.nuget\\packages\\xamarin.ffimageloading.forms\\2.4.11.982\\xamarin.ffimageloading.forms.2.4.11.982.nupkg.sha512",
+    "C:\\Users\\suporte\\.nuget\\packages\\xamarin.ffimageloading.transformations\\2.4.11.982\\xamarin.ffimageloading.transformations.2.4.11.982.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512",
     "C:\\Users\\suporte\\.nuget\\packages\\xamarin.forms.pancakeview\\2.1.0.714\\xamarin.forms.pancakeview.2.1.0.714.nupkg.sha512"
   ],
