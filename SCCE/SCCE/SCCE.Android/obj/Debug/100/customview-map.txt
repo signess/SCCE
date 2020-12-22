@@ -40,11 +40,6 @@ com.google.android.material.tabs.TabLayout;C:\Users\suporte\Source\Repos\signess
 com.google.android.material.tabs.TabLayout;obj\Debug\100\res\layout\tabbar.xml
 Com.ViewPagerIndicator.CirclePageIndicator;C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE.Android\obj\Debug\100\lp\0\jl\res\layout\horizontal_viewpager.xml
 Com.ViewPagerIndicator.CirclePageIndicator;C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE.Android\obj\Debug\100\lp\0\jl\res\layout\vertical_viewpager.xml
-crc6443725871784b4041.HorizontalViewPager;C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE.Android\obj\Debug\100\lp\0\jl\res\layout\horizontal_viewpager.xml
-crc6443725871784b4041.VerticalViewPager;C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE.Android\obj\Debug\100\lp\0\jl\res\layout\vertical_viewpager.xml
-crc646c47a7af3a53b8ab.CirclePageIndicator;C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE.Android\obj\Debug\100\lp\0\jl\res\layout\horizontal_viewpager.xml
-crc646c47a7af3a53b8ab.CirclePageIndicator;C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE.Android\obj\Debug\100\lp\0\jl\res\layout\vertical_viewpager.xml
-crc64720bb2db43a66fe9.FormsViewPager;C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE.Android\obj\Debug\100\lp\56\jl\res\layout\rootlayout.xml
 declare-styleable;C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE.Android\obj\Debug\100\lp\2\jl\res\values\vpi__attrs.xml
 declare-styleable;C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE.Android\obj\Debug\100\lp\56\jl\res\values\attrs.xml
 declare-styleable;C:\Users\suporte\Source\Repos\signess\SCCE\SCCE\SCCE\SCCE.Android\obj\Debug\100\lp\7\jl\res\values\values.xml

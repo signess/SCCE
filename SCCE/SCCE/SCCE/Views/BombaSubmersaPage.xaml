@@ -51,6 +51,14 @@
                     <TapGestureRecognizer Tapped="GoBack" />
                 </Grid.GestureRecognizers>
             </Grid>
+            <Label
+                FontFamily="ThemeFontBold"
+                FontSize="21"
+                HorizontalOptions="Center"
+                IsVisible="{Binding IsEmpty}"
+                Text="Sem dados encontrados!"
+                TextColor="Black"
+                VerticalOptions="End" />
             <pv:PancakeView
                 Grid.Row="1"
                 Margin="10,10"
@@ -98,9 +106,7 @@
                                     HeightRequest="1"
                                     HorizontalOptions="FillAndExpand"
                                     VerticalOptions="Start" />
-                                <ScrollView
-                                    Grid.Row="3"
-                                    Grid.ColumnSpan="2">
+                                <ScrollView Grid.Row="3" Grid.ColumnSpan="2">
                                     <Label
                                         FontFamily="ThemeFontMedium"
                                         FontSize="16"

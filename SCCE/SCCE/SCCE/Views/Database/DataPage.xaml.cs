@@ -27,14 +27,14 @@ namespace SCCE.Views.Database
             _dataRepository = new DataRepository();
         }
 
+        /*
         private async void TryLogin()
         {
             LoginService services = new LoginService();
-            var getLoginDetail = await services.CheckLoginIfExists("evandro", "sanesoares");
+            var getLoginDetail = await services.CheckLoginIfExists("teste.app", "123456");
 
             if (getLoginDetail)
             {
-                //await DisplayAlert("Conectado com sucesso!", "O download de dados começara agora!", "Okay");
                 var popupPage = new MessageBox("Conectado com sucesso!", "O download de dados começara agora!", "tick.json", "Continuar", Lottie.Forms.RepeatMode.Infinite, 0, 0);
 
                 popupPage.Disappearing += async (c, d) =>
@@ -45,7 +45,6 @@ namespace SCCE.Views.Database
             }
             else
             {
-                //var failed = await DisplayAlert("Conexão indisponivel", "Não foi possível estabelecer uma conexão com o servidor. Verifique se está conectado a uma rede Sanesul.", "Tentar novamente", "Fechar aplicativo");
                 var choice = false;
                 var popupPage = new ActionBox("Conexão indisponivel", "Não foi possível estabelecer uma conexão com o servidor. Verifique se está conectado a uma rede Sanesul.", "fail.json", "Tentar novamente", "Fechar aplicativo", Lottie.Forms.RepeatMode.Infinite, 0, 0);
                 popupPage.CallbackEvent += (c, arg) =>
@@ -65,8 +64,9 @@ namespace SCCE.Views.Database
                 };
                 await PopupNavigation.Instance.PushAsync(popupPage);
             }
+            
         }
-
+        */
         private async void ToNextPage()
         {
             await Navigation.PushModalAsync(new NavigationPage(new RegionaisPage()));
@@ -77,19 +77,19 @@ namespace SCCE.Views.Database
         {
             if (App.DataList.Count > 0)
             {
-                //bool resposta = await DisplayAlert("Atualização", "Deseja buscar por atualizações no banco de dados?", "Sim", "Não");
                 bool choice = false;
                 var popupPage = new ActionBox("Atualização", "Deseja buscar por atualizações no banco de dados?", "update.json", "Sim", "Não");
                 popupPage.CallbackEvent += (c, arg) =>
                 {
                     choice = arg;
                 };
-                popupPage.Disappearing += (c, d) =>
+                popupPage.Disappearing += async (c, d) =>
                 {
                     if (choice)
                     {
                         _dataRepository.DeleteAllData();
-                        TryLogin();
+                        await RetriveDataFromCloud();
+                        //TryLogin();
                     }
                     else
                     {
@@ -100,7 +100,8 @@ namespace SCCE.Views.Database
             }
             else
             {
-                TryLogin();
+                await RetriveDataFromCloud();
+                //TryLogin();
             }
         }
 
@@ -144,7 +145,7 @@ namespace SCCE.Views.Database
                 if (regionais == null || regionais.Count == 0)
                 {
                     //ERROR RETRIVE LIST
-                    var errorPopUpPage = new MessageBox("Erro na captura de dados", "Verifique suas conexão com a rede Sanesul e tente novamente!", "fail.json", "Continuar", Lottie.Forms.RepeatMode.Infinite, 0, 0);
+                    var errorPopUpPage = new MessageBox("Erro na captura de dados", "Verifique suas conexão com a rede Sanesul e tente novamente!", "fail.json", "Fechar aplicativo", Lottie.Forms.RepeatMode.Infinite, 0, 0);
 
                     errorPopUpPage.Disappearing += (c, d) =>
                     {
@@ -218,7 +219,24 @@ namespace SCCE.Views.Database
             }
             catch (Exception ex)
             {
-                throw ex;
+                var choice = false;
+                var errorPopupPage = new ActionBox("Conexão indisponivel", "Não foi possível estabelecer uma conexão com o servidor. Verifique se está conectado a uma rede Sanesul.", "fail.json", "Tentar novamente", "Fechar aplicativo", Lottie.Forms.RepeatMode.Infinite, 0, 0);
+                errorPopupPage.CallbackEvent += (c, arg) =>
+                {
+                    choice = arg;
+                };
+                errorPopupPage.Disappearing += async (c, d) =>
+                {
+                    if (choice)
+                    {
+                        await RetriveDataFromCloud();
+                    }
+                    else
+                    {
+                        Application.Current.Quit();
+                    }
+                };
+                await PopupNavigation.Instance.PushAsync(errorPopupPage);
             }
             var popupPage = new MessageBox("Download completo", "Os dados foram baixados com sucesso!", "completed.json", "Continuar", Lottie.Forms.RepeatMode.Infinite, 0, 0);
 

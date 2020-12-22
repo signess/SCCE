@@ -17,6 +17,9 @@ namespace SCCE.ViewModels
         }
         public string BackgroundStartColor { get; set; }
         public string BackgroundEndColor { get; set; }
+
+        public bool IsEmpty { get { return BombaSubmersa.Count <= 0; } }
+        public bool IsNotEmpty { get { return !IsEmpty; } }
         public ObservableCollection<ObjetoSerialModel> BombaSubmersa => GetProperties();
 
         private ObservableCollection<ObjetoSerialModel> GetProperties()
