@@ -142,7 +142,7 @@
       <Version>9.2.2</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>12.0.3</Version>
+      <Version>13.0.1</Version>
     </PackageReference>
     <PackageReference Include="PCLExt.FileStorage">
       <Version>1.4.1.1</Version>
